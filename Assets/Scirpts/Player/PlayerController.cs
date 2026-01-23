@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     [SerializeField]
     private Rigidbody2D _rigidBody;
+    public float Velocity { get { return _rigidBody.linearVelocityX; } }
 
 
     [SerializeField]
@@ -35,25 +36,28 @@ public class PlayerController : MonoBehaviour
     protected void LateUpdate()
     {
         _stateMachine.Update();
+        _stateMachine.OnMove(_moveInput);
     }
 
 
     private void OnMove(InputValue value)
     {
         _moveInput = value.Get<float>();
-        _animator.SetBool("Direction", _moveInput != 0);
-
         if (_moveInput != 0)
         {
             _spriteRenderer.flipX = _moveInput > 0;
         }
 
-        _stateMachine.OnMove(_moveInput);
     }
 
     public void ChangeState<T>() where T: PlayerBaseState
     {
         _stateMachine.ChangeState<T>();
+    }
+
+    public void PlayAnimation(int animHash, float crossFadeTime = 0.1f)
+    {
+        _animator.CrossFade(animHash, crossFadeTime);
     }
 
     public void Move()
