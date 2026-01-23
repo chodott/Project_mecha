@@ -4,36 +4,37 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    enum EPlayerState
-    {
-        idle,
-        run,
-        jump
-    }
     private float _moveInput;
-    private EPlayerState _curState;
-
 
     [SerializeField]
     private Animator _animator;
     [SerializeField]
     private SpriteRenderer _spriteRenderer;
+    [SerializeField]
+    private Rigidbody2D _rigidBody;
 
+
+    [SerializeField]
+    private float _movingSpeed = 5f;
+
+
+    private PlayerStateMachine _stateMachine;
+
+    private void Awake()
+    {
+        _stateMachine = new PlayerStateMachine(this);
+    }
     protected void Start()
     {
-        _animator = GetComponent<Animator>();
+        _stateMachine.AddState(new PlayerIdleState());
+        _stateMachine.AddState(new PlayerRunState());
+
+        ChangeState<PlayerIdleState>();
     }
 
     protected void LateUpdate()
     {
-        if (_moveInput != 0)
-        {
-            _curState = EPlayerState.run;
-        }
-        else
-        {
-            _curState = EPlayerState.idle;
-        }
+        _stateMachine.Update();
     }
 
 
@@ -46,5 +47,17 @@ public class PlayerController : MonoBehaviour
         {
             _spriteRenderer.flipX = _moveInput > 0;
         }
+
+        _stateMachine.OnMove(_moveInput);
+    }
+
+    public void ChangeState<T>() where T: PlayerBaseState
+    {
+        _stateMachine.ChangeState<T>();
+    }
+
+    public void Move()
+    {
+        _rigidBody.linearVelocityX = _movingSpeed * _moveInput;
     }
 }
