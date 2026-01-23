@@ -31,7 +31,7 @@ public class PlayerIdleState : PlayerBaseState
     public override void Enter(PlayerController owner)
     {
         base.Enter(owner);
-        PlayAnim(PlayerAnim.Idle, 0);
+        PlayAnim(PlayerAnim.Idle, 0.1f);
     }
 
     public override void OnMove(float x) 
@@ -41,6 +41,11 @@ public class PlayerIdleState : PlayerBaseState
             _controller.ChangeState<PlayerRunState>();
         }
     }
+
+    public override void OnJump()
+    {
+        _controller.ChangeState<PlayerJumpState>();
+    }
 }
 
 
@@ -49,14 +54,14 @@ public class PlayerRunState: PlayerBaseState
     public override void Enter(PlayerController owner)
     {
         base.Enter(owner);
-        PlayAnim(PlayerAnim.Run);
+        PlayAnim(PlayerAnim.Run, 0.1f);
     }
 
     public override void OnMove(float x)
     {
         if(Mathf.Abs(x) < 0.01f)
         {
-            if(Mathf.Abs(_controller.Velocity) < 0.01f)
+            if(Mathf.Abs(_controller.Velocity.x) < 0.01f)
             {
                 _controller.ChangeState<PlayerIdleState>();
                 return;
@@ -64,5 +69,64 @@ public class PlayerRunState: PlayerBaseState
         }
 
         _controller.Move();
+    }
+
+    public override void OnJump()
+    {
+        _controller.ChangeState<PlayerJumpState>();
+    }
+}
+
+public class PlayerJumpState : PlayerBaseState
+{
+    public override void Enter(PlayerController owner)
+    {
+        base.Enter(owner);
+        PlayAnim(PlayerAnim.Jump);
+
+        _controller.Jump();
+    }
+
+    public override void Update()
+    {
+        if(_controller.Velocity.y < -0.1f)
+        {
+            _controller.ChangeState<PlayerFallState>();
+        }
+    }
+}
+
+public class PlayerFallState : PlayerBaseState
+{
+    public override void Update()
+    {
+        if(_controller.IsGrounded() == true)
+        {
+            _controller.ChangeState<PlayerLandingState>();
+        }
+    }
+}
+
+public class PlayerLandingState : PlayerBaseState
+{
+    public override void Enter(PlayerController owner)
+    {
+        base.Enter(owner);
+        PlayAnim(PlayerAnim.Landing, 0.1f);
+    }
+    public override void Update()
+    {
+        var stateInfo = _controller.GetAnimStateInfo();
+        if(stateInfo.shortNameHash == PlayerAnim.Landing && stateInfo.normalizedTime >= 0.9f)
+        {
+            if (Mathf.Abs(_controller.Velocity.x) < 0.1f)
+            {
+                _controller.ChangeState<PlayerIdleState>();
+            }
+            else
+            {
+                _controller.ChangeState<PlayerRunState>();
+            }
+        }
     }
 }

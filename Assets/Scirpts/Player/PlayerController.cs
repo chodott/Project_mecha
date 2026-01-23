@@ -1,6 +1,8 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,11 +14,18 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     [SerializeField]
     private Rigidbody2D _rigidBody;
-    public float Velocity { get { return _rigidBody.linearVelocityX; } }
+    public Vector2 Velocity { get { return _rigidBody.linearVelocity; } }
 
-
+    //Stat
     [SerializeField]
     private float _movingSpeed = 5f;
+    [SerializeField]
+    private float _jumpForce = 3f;
+
+    //Collision
+    [SerializeField] private LayerMask _groundLayer;    // 바닥 레이어
+    [SerializeField] private Transform _groundCheckPos; // 발밑에 배치한 빈 오브젝트
+    [SerializeField] private Vector2 _groundCheckSize = new Vector2(0.3f, 0.1f); // 박스 크기
 
 
     private PlayerStateMachine _stateMachine;
@@ -29,17 +38,22 @@ public class PlayerController : MonoBehaviour
     {
         _stateMachine.AddState(new PlayerIdleState());
         _stateMachine.AddState(new PlayerRunState());
+        _stateMachine.AddState(new PlayerJumpState());
+        _stateMachine.AddState(new PlayerFallState());
+        _stateMachine.AddState(new PlayerLandingState());
 
         ChangeState<PlayerIdleState>();
     }
 
-    protected void LateUpdate()
+    protected void Update()
     {
         _stateMachine.Update();
         _stateMachine.OnMove(_moveInput);
     }
 
 
+
+    //Input System
     private void OnMove(InputValue value)
     {
         _moveInput = value.Get<float>();
@@ -48,6 +62,11 @@ public class PlayerController : MonoBehaviour
             _spriteRenderer.flipX = _moveInput > 0;
         }
 
+    }
+
+    private void OnJump(InputValue value)
+    {
+        _stateMachine.OnJump();
     }
 
     public void ChangeState<T>() where T: PlayerBaseState
@@ -63,5 +82,20 @@ public class PlayerController : MonoBehaviour
     public void Move()
     {
         _rigidBody.linearVelocityX = _movingSpeed * _moveInput;
+    }
+
+    public void Jump()
+    {
+        _rigidBody.linearVelocityY = _jumpForce;
+    }
+
+    public bool IsGrounded()
+    {
+        return Physics2D.OverlapBox(_groundCheckPos.position, _groundCheckSize, 0, _groundLayer);
+    }
+
+    public AnimatorStateInfo GetAnimStateInfo()
+    {
+        return _animator.GetCurrentAnimatorStateInfo(0);
     }
 }
