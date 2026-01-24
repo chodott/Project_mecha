@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
 
 
     private PlayerStateMachine _stateMachine;
+
+    //Shooting
+    private Transform _muzzleTransform;
     private bool _isShooting = false;
 
     private void Awake()
