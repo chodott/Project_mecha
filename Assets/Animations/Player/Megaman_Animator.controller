@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1107 &-6406182750147221753
+AnimatorStateMachine:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Fire Layer
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
 --- !u!1107 &-6406169194689390703
 AnimatorStateMachine:
   serializedVersion: 6
@@ -20,7 +39,7 @@ AnimatorStateMachine:
     m_Position: {x: 350, y: 390, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3229724133521591367}
-    m_Position: {x: 673, y: 422.5, z: 0}
+    m_Position: {x: 360, y: 500, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -28,7 +47,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ExitPosition: {x: 1130, y: 100, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 4205747169907650242}
 --- !u!91 &9100000
@@ -37,7 +56,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Megaman_Idle_Controller
+  m_Name: Megaman_Animator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Direction
@@ -55,6 +74,30 @@ AnimatorController:
     m_Behaviours: []
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: Fire Layer
+    m_StateMachine: {fileID: -6406182750147221753}
+    m_Mask: {fileID: 0}
+    m_Motions:
+    - serializedVersion: 2
+      m_State: {fileID: 4205747169907650242}
+      m_Motion: {fileID: 7400000, guid: 281a490816741364692d4f50a3c1369f, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 2083912221572088835}
+      m_Motion: {fileID: 7400000, guid: 6b14dc3eaf72eb44bb0529403d47fc39, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 5569504515325370643}
+      m_Motion: {fileID: 7400000, guid: 77b829b1b2131ac4eb896d4a69854dcb, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 3229724133521591367}
+      m_Motion: {fileID: 7400000, guid: 77b829b1b2131ac4eb896d4a69854dcb, type: 2}
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: 0
     m_DefaultWeight: 0
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
@@ -79,7 +122,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: dae8308c8d240674cb43b83e0d7a24ba, type: 2}
+  m_Motion: {fileID: 7400000, guid: c20efd86fe6061b41a5038e1c3d6d514, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -93,7 +136,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Landing
-  m_Speed: 1
+  m_Speed: -1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -105,7 +148,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 76b83249666e0fe4696fd5dcc31c23ed, type: 2}
+  m_Motion: {fileID: 7400000, guid: e920ba2d4ace9b84da2cca051533a739, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -131,7 +174,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d1c4b6f1282fbac4c8883a8672925b9d, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6424588812364e946864c54aadd524c9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

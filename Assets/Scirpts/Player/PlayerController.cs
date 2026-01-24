@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Animations;
@@ -21,6 +22,9 @@ public class PlayerController : MonoBehaviour
     private float _movingSpeed = 5f;
     [SerializeField]
     private float _jumpForce = 3f;
+    [SerializeField]
+    private float _fireCoolDown = 0.03f;
+
 
     //Collision
     [SerializeField] private LayerMask _groundLayer;    // ¹Ù´Ú ·¹ÀÌ¾î
@@ -29,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
 
     private PlayerStateMachine _stateMachine;
+    private bool _isShooting = false;
 
     private void Awake()
     {
@@ -67,6 +72,29 @@ public class PlayerController : MonoBehaviour
     private void OnJump(InputValue value)
     {
         _stateMachine.OnJump();
+    }
+
+    private void OnAttack(InputValue value)
+    {
+        if(_isShooting == true)
+        {
+            return;
+        }
+
+        //FireLogic
+
+
+        _animator.SetLayerWeight(1, 1f);
+        _isShooting = true;
+        StartCoroutine(FirePoseRoutine());
+    }
+
+    private IEnumerator FirePoseRoutine()
+    {
+        yield return new WaitForSeconds(_fireCoolDown);
+
+        _animator.SetLayerWeight(1, 0f);
+        _isShooting = false;
     }
 
     public void ChangeState<T>() where T: PlayerBaseState
