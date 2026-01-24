@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private PlayerInput _playerInput;
     private InputAction _attackAction;
+    private PlayerAttack _playerAttack;
 
     public Vector2 Velocity { get { return _rigidBody.linearVelocity; } }
 
@@ -28,8 +29,6 @@ public class PlayerController : MonoBehaviour
     private float _movingSpeed = 5f;
     [SerializeField]
     private float _jumpForce = 3f;
-    [SerializeField]
-    private float _fireCoolDown = 0.03f;
 
 
     //Collision
@@ -37,24 +36,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _groundCheckPos; // 발밑에 배치한 빈 오브젝트
     [SerializeField] private Vector2 _groundCheckSize = new Vector2(0.3f, 0.1f); // 박스 크기
 
-
-    //Bullet
-    [SerializeField] GameObject _defaultBullet;
-    [SerializeField] GameObject _fullChargeBullet;
-    [SerializeField] private float _fullChargeTime;
-    private float _curChargeTime;
-
-
     private PlayerStateMachine _stateMachine;
 
-    //Shooting
-    [SerializeField]
-    private Transform _muzzleTransform;
-    private bool _isShooting = false;
 
     private void Awake()
     {
         _stateMachine = new PlayerStateMachine(this);
+        _playerAttack = GetComponent<PlayerAttack>();
 
         _playerInput = GetComponent<PlayerInput>();
         _attackAction = _playerInput.actions["Attack"];
@@ -89,7 +77,6 @@ public class PlayerController : MonoBehaviour
     {
         _stateMachine.Update();
         _stateMachine.OnMove(_moveInput);
-        StillCharge();
     }
 
 
@@ -112,47 +99,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnAttackStarted(InputAction.CallbackContext context)
     {
-        if (_isShooting)
-        {
-            return;
-        }
-
-        _isShooting = true;
-        _animator.SetLayerWeight(1, 1f);
+        _playerAttack.StartCharging();
     }
 
     private void OnAttackCanceled(InputAction.CallbackContext context)
     {
-        StartCoroutine(FirePoseRoutine());
-
-        GameObject launchedMissile;
-        if (_curChargeTime >= _fullChargeTime)
-        {
-            launchedMissile = Instantiate(_fullChargeBullet, _muzzleTransform.position, _muzzleTransform.rotation);
-        }
-        else
-        {
-            launchedMissile = Instantiate(_defaultBullet, _muzzleTransform.position, _muzzleTransform.rotation);
-        }
-
-        Vector3 directionVector = transform.right * _direction;
-        Vector3 muzzlePosition = _muzzleTransform.position;
-
-        float xGap = MathF.Abs(muzzlePosition.x - transform.position.x);
-
-        Vector3 launchPosition = new Vector3(transform.position.x + _direction * xGap , muzzlePosition.y, muzzlePosition.z);
-        _curChargeTime = 0;
-        launchedMissile.GetComponent<BaseBullet>().Launch(launchPosition, directionVector);
+        _playerAttack.Fire(_direction);
 
     }
 
-    private IEnumerator FirePoseRoutine()
-    {
-        yield return new WaitForSeconds(_fireCoolDown);
 
-        _animator.SetLayerWeight(1, 0f);
-        _isShooting = false;
-    }
 
     public void ChangeState<T>() where T : PlayerBaseState
     {
@@ -177,14 +133,6 @@ public class PlayerController : MonoBehaviour
     public bool IsGrounded()
     {
         return Physics2D.OverlapBox(_groundCheckPos.position, _groundCheckSize, 0, _groundLayer);
-    }
-
-    public void StillCharge()
-    {
-        if (_isShooting)
-        {
-            _curChargeTime += Time.deltaTime;
-        }
     }
 
     public AnimatorStateInfo GetAnimStateInfo()

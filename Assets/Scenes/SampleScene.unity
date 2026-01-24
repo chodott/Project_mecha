@@ -523,6 +523,7 @@ GameObject:
   - component: {fileID: 1899616781}
   - component: {fileID: 1899616785}
   - component: {fileID: 1899616784}
+  - component: {fileID: 1899616788}
   - component: {fileID: 1899616787}
   - component: {fileID: 1899616786}
   m_Layer: 3
@@ -567,16 +568,11 @@ MonoBehaviour:
   _rigidBody: {fileID: 1899616787}
   _movingSpeed: 2.5
   _jumpForce: 5
-  _fireCoolDown: 0.3
   _groundLayer:
     serializedVersion: 2
     m_Bits: 1
   _groundCheckPos: {fileID: 490042626}
   _groundCheckSize: {x: 0.3, y: 1}
-  _defaultBullet: {fileID: 2756752189783145730, guid: b96132353920d0b48896276c2c64b29d, type: 3}
-  _fullChargeBullet: {fileID: 2756752189783145730, guid: f297eb38fa629574d8c49444a23c295f, type: 3}
-  _fullChargeTime: 1
-  _muzzleTransform: {fileID: 618307528}
 --- !u!114 &1899616785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,6 +676,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1899616788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899616777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1809aa0d783f8b94a922d7495a4fa762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultBullet: {fileID: 2756752189783145730, guid: b96132353920d0b48896276c2c64b29d, type: 3}
+  _fullChargeBullet: {fileID: 2756752189783145730, guid: f297eb38fa629574d8c49444a23c295f, type: 3}
+  _animator: {fileID: 1895767965}
+  _fullChargeTime: 1
+  _muzzleTransform: {fileID: 618307528}
+  _fireCoolDown: 0.03
 --- !u!1 &1941263035
 GameObject:
   m_ObjectHideFlags: 0
