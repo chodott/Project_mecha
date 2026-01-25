@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: c9423988c5f3f9b499b68d2315db5c44
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2561373778717576442
+    second: cloudPlatform_0
+  - first:
+      213: -5646412384041035264
+    second: cloudPlatform_1
+  - first:
+      213: -7634527555406621157
+    second: cloudPlatform_2
+  - first:
+      213: 1282521862504950150
+    second: cloudPlatform_3
+  - first:
+      213: 1202340864896634678
+    second: cloudPlatform_4
+  - first:
+      213: 6163870729983527004
+    second: cloudPlatform_5
+  - first:
+      213: 6920229843889618446
+    second: cloudPlatform_6
+  - first:
+      213: 6397891477930693158
+    second: cloudPlatform_7
+  - first:
+      213: -7878699038140008285
+    second: cloudPlatform_8
+  - first:
+      213: 3168078518176087477
+    second: cloudPlatform_9
+  - first:
+      213: -5449198607649338601
+    second: cloudPlatform_10
+  - first:
+      213: 4346353936871726050
+    second: cloudPlatform_11
+  - first:
+      213: 2185628509282033697
+    second: cloudPlatform_12
+  - first:
+      213: -7447675985786805041
+    second: cloudPlatform_13
+  - first:
+      213: -7764734269486409172
+    second: cloudPlatform_14
+  - first:
+      213: -7789406290132888688
+    second: cloudPlatform_15
+  - first:
+      213: 6959291792665561734
+    second: cloudPlatform_16
+  - first:
+      213: 4287482519832537895
+    second: cloudPlatform_17
+  - first:
+      213: 5800589511973126450
+    second: cloudPlatform_18
+  - first:
+      213: -1109857578098350484
+    second: cloudPlatform_19
+  - first:
+      213: -918798520801414059
+    second: cloudPlatform_20
+  - first:
+      213: -3597800141778216765
+    second: cloudPlatform_21
+  - first:
+      213: -3199625083383146831
+    second: cloudPlatform_22
+  - first:
+      213: -6327612308577547019
+    second: cloudPlatform_23
+  - first:
+      213: 1897113030766163580
+    second: cloudPlatform_24
+  - first:
+      213: -8841155750352257289
+    second: cloudPlatform_25
+  - first:
+      213: 7973924010175587869
+    second: cloudPlatform_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cloudPlatform_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 124
+        width: 47
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc067981e3db8320800000000000000
+      internalID: 2561373778717576442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 95
+        width: 57
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a1ed94ad9e3a1b0800000000000000
+      internalID: -5646412384041035264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 124
+        width: 47
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b169e0843a5bc0690800000000000000
+      internalID: -7634527555406621157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_3
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 96
+        width: 58
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689a74fb6de6cc110800000000000000
+      internalID: 1282521862504950150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_4
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 124
+        width: 49
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63f891775a29fa010800000000000000
+      internalID: 1202340864896634678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_5
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 96
+        width: 60
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c58881675c77a8550800000000000000
+      internalID: 6163870729983527004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_6
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 124
+        width: 47
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0ef819c068990060800000000000000
+      internalID: 6920229843889618446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 67
+        width: 57
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 622de85d660e9c850800000000000000
+      internalID: 6397891477930693158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 38
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a8f37bc7fc39a290800000000000000
+      internalID: -7878699038140008285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_9
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 35
+        width: 58
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bd7e6880a647fb20800000000000000
+      internalID: 3168078518176087477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_10
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 68
+        width: 58
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71b0288ccbe8064b0800000000000000
+      internalID: -5449198607649338601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_11
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 37
+        width: 58
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eb1c5ba0e9515c30800000000000000
+      internalID: 4346353936871726050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_12
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 68
+        width: 60
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 120e8ba9c89e45e10800000000000000
+      internalID: 2185628509282033697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_13
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 37
+        width: 58
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc468f0862a84a890800000000000000
+      internalID: -7447675985786805041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_14
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 51
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2ad5fb325f1e3490800000000000000
+      internalID: -7764734269486409172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_15
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 51
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0939f69cf3876e390800000000000000
+      internalID: -7789406290132888688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_16
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 51
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a4f16730f549060800000000000000
+      internalID: 6959291792665561734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_17
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 51
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ba05fb2a2308b30800000000000000
+      internalID: 4287482519832537895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_18
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 52
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 231c305ad65df7050800000000000000
+      internalID: 5800589511973126450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 58
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c662c2ab96ef890f0800000000000000
+      internalID: -1109857578098350484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_20
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 1
+        width: 58
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5543a730d95cf33f0800000000000000
+      internalID: -918798520801414059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_21
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1
+        width: 58
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c8957045db021ec0800000000000000
+      internalID: -3597800141778216765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_22
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 1
+        width: 69
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b6948260f5a893d0800000000000000
+      internalID: -3199625083383146831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_23
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 1
+        width: 58
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc88d6612ecf28a0800000000000000
+      internalID: -6327612308577547019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_24
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1
+        width: 58
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c76f4990046e35a10800000000000000
+      internalID: 1897113030766163580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_25
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 1
+        width: 58
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fef95000b7ed4580800000000000000
+      internalID: -8841155750352257289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudPlatform_26
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 0
+        width: 61
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d16697cb3a119ae60800000000000000
+      internalID: 7973924010175587869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 06f066d6c400ac344875f778f1f89b22
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      cloudPlatform_0: 2561373778717576442
+      cloudPlatform_1: -5646412384041035264
+      cloudPlatform_10: -5449198607649338601
+      cloudPlatform_11: 4346353936871726050
+      cloudPlatform_12: 2185628509282033697
+      cloudPlatform_13: -7447675985786805041
+      cloudPlatform_14: -7764734269486409172
+      cloudPlatform_15: -7789406290132888688
+      cloudPlatform_16: 6959291792665561734
+      cloudPlatform_17: 4287482519832537895
+      cloudPlatform_18: 5800589511973126450
+      cloudPlatform_19: -1109857578098350484
+      cloudPlatform_2: -7634527555406621157
+      cloudPlatform_20: -918798520801414059
+      cloudPlatform_21: -3597800141778216765
+      cloudPlatform_22: -3199625083383146831
+      cloudPlatform_23: -6327612308577547019
+      cloudPlatform_24: 1897113030766163580
+      cloudPlatform_25: -8841155750352257289
+      cloudPlatform_26: 7973924010175587869
+      cloudPlatform_3: 1282521862504950150
+      cloudPlatform_4: 1202340864896634678
+      cloudPlatform_5: 6163870729983527004
+      cloudPlatform_6: 6920229843889618446
+      cloudPlatform_7: 6397891477930693158
+      cloudPlatform_8: -7878699038140008285
+      cloudPlatform_9: 3168078518176087477
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
