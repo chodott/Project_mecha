@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BaseBullet : MonoBehaviour
+public class BaseBullet : MonoBehaviour, IPoolable
 {
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] protected Animator _animator;
@@ -8,6 +8,8 @@ public class BaseBullet : MonoBehaviour
     [SerializeField] protected float _damage;
 
     private Vector2 _moveDirection;
+
+    public int PoolKey { get; set; }
 
     protected virtual void Move()
     {
@@ -29,5 +31,14 @@ public class BaseBullet : MonoBehaviour
         transform.position = position;
         _moveDirection = direction;
         _spriteRenderer.flipX = _moveDirection.x < 0;
+    }
+
+    public void OnSpawn()
+    {
+        
+    }
+
+    public void OnDespawn()
+    {
     }
 }

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 1300159607652599298}
   _animator: {fileID: 0}
-  _speed: 3
+  _speed: 5
   _damage: 1
 --- !u!1 &9014462768944646508
 GameObject:

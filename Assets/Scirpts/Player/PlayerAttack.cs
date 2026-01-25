@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private GameObject _defaultBullet;
-    [SerializeField] private GameObject _fullChargeBullet;
+    [SerializeField] private BaseBullet _defaultBullet;
+    [SerializeField] private BaseBullet _fullChargeBullet;
     [SerializeField] private Animator _animator;
     [SerializeField] private float _fullChargeTime;
     [SerializeField] private Transform _muzzleTransform;
@@ -13,6 +13,12 @@ public class PlayerAttack : MonoBehaviour
     private float _curChargeTime;
 
     private bool _isShooting = false;
+
+    protected void Start()
+    {
+        ObjectPoolManager.Instance.PreloadDefault(_defaultBullet, 10);
+        ObjectPoolManager.Instance.PreloadDefault(_fullChargeBullet, 5);
+    }
 
     protected void Update()
     {
@@ -29,20 +35,14 @@ public class PlayerAttack : MonoBehaviour
 
     public void Fire(float direction)
     {
-        GameObject launchedMissile;
-        if (_curChargeTime >= _fullChargeTime)
-        {
-            launchedMissile = Instantiate(_fullChargeBullet, _muzzleTransform.position, _muzzleTransform.rotation);
-        }
-        else
-        {
-            launchedMissile = Instantiate(_defaultBullet, _muzzleTransform.position, _muzzleTransform.rotation);
-        }
+        BaseBullet bulletPrefab =  _curChargeTime >= _fullChargeTime ? _fullChargeBullet : _defaultBullet;
 
         Vector3 directionVector = transform.right * direction;
         float xOffset = MathF.Abs(_muzzleTransform.localPosition.x) * direction;
         Vector3 launchPosition = transform.position + new Vector3(xOffset, _muzzleTransform.localPosition.y, 0);
-        launchedMissile.GetComponent<BaseBullet>().Launch(launchPosition, directionVector);
+
+        BaseBullet newBullet =  ObjectPoolManager.Instance.Get<BaseBullet>(bulletPrefab);
+        newBullet.Launch(launchPosition, directionVector);
         _curChargeTime = 0;
 
         StartCoroutine(FirePoseRoutine());
