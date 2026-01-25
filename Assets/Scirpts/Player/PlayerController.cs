@@ -105,7 +105,6 @@ public class PlayerController : MonoBehaviour
     private void OnAttackCanceled(InputAction.CallbackContext context)
     {
         _playerAttack.Fire(_direction);
-
     }
 
 

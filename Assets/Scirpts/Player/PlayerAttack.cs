@@ -9,10 +9,11 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private float _fullChargeTime;
     [SerializeField] private Transform _muzzleTransform;
-    [SerializeField] private float _fireCoolDown = 0.03f;
-    private float _curChargeTime;
+    [SerializeField] private float _fireCoolDown = 0.2f;
 
-    private bool _isShooting = false;
+    private Coroutine _firePoseRoutine;
+    private float _curChargeTime;
+    private bool _isCharging = false;
 
     protected void Start()
     {
@@ -22,14 +23,14 @@ public class PlayerAttack : MonoBehaviour
 
     protected void Update()
     {
-        if (_isShooting)
+        if (_isCharging)
         {
             _curChargeTime += Time.deltaTime;
         }
     }
     public void StartCharging()
     {
-        _isShooting = true;
+        _isCharging = true;
         _animator.SetLayerWeight(1, 1f);
     }
 
@@ -44,15 +45,19 @@ public class PlayerAttack : MonoBehaviour
         BaseBullet newBullet =  ObjectPoolManager.Instance.Get<BaseBullet>(bulletPrefab);
         newBullet.Launch(launchPosition, directionVector);
         _curChargeTime = 0;
+        _isCharging = false;
 
-        StartCoroutine(FirePoseRoutine());
+        if(_firePoseRoutine != null)
+        {
+            StopCoroutine(_firePoseRoutine);
+        }
+        _firePoseRoutine = StartCoroutine(FirePoseRoutine());
     }
 
     private IEnumerator FirePoseRoutine()
     {
+        _animator.SetTrigger("Fire");
         yield return new WaitForSeconds(_fireCoolDown);
-
         _animator.SetLayerWeight(1, 0f);
-        _isShooting = false;
     }
 }

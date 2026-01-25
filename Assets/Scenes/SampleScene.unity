@@ -737,7 +737,7 @@ MonoBehaviour:
   _animator: {fileID: 1895767965}
   _fullChargeTime: 1
   _muzzleTransform: {fileID: 618307528}
-  _fireCoolDown: 0.03
+  _fireCoolDown: 1
 --- !u!1 &1941263035
 GameObject:
   m_ObjectHideFlags: 0
