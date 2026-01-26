@@ -130,7 +130,6 @@ public class PlayerController : NetworkBehaviour
         {
             if (!IsOwner)
             {
-                // 리모트 플레이어 화면에서도 부드럽게 전환
                 _animator.CrossFade(newHash, 0.1f);
             }
         };
@@ -154,6 +153,7 @@ public class PlayerController : NetworkBehaviour
             _playerInput.enabled = false; 
         }
     }
+
 
     //Input System
     private void OnMove(InputValue value)
