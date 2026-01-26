@@ -2,18 +2,27 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+public enum FireState
+{
+    Idle,
+    Charging,
+    PostFire
+}
+
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private BaseBullet _defaultBullet;
     [SerializeField] private BaseBullet _fullChargeBullet;
-    [SerializeField] private Animator _animator;
     [SerializeField] private float _fullChargeTime;
     [SerializeField] private Transform _muzzleTransform;
     [SerializeField] private float _fireCoolDown = 0.2f;
 
+
     private Coroutine _firePoseRoutine;
     private float _curChargeTime;
     private bool _isCharging = false;
+
+    public event Action<FireState> OnFireStateChanged;
 
     protected void Start()
     {
@@ -31,7 +40,7 @@ public class PlayerAttack : MonoBehaviour
     public void StartCharging()
     {
         _isCharging = true;
-        _animator.SetLayerWeight(1, 1f);
+        OnFireStateChanged(FireState.Charging);
     }
 
     public void Fire(float direction)
@@ -56,8 +65,8 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator FirePoseRoutine()
     {
-        _animator.SetTrigger("Fire");
+        OnFireStateChanged(FireState.PostFire);
         yield return new WaitForSeconds(_fireCoolDown);
-        _animator.SetLayerWeight(1, 0f);
+        OnFireStateChanged(FireState.Idle);
     }
 }

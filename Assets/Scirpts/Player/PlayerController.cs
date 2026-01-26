@@ -1,3 +1,4 @@
+using System;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Animations;
@@ -36,6 +37,23 @@ public class PlayerController : NetworkBehaviour
 
     private PlayerStateMachine _stateMachine;
 
+    //Network 
+    private NetworkVariable<FireState> _curFireState = new NetworkVariable<FireState>(
+        FireState.Idle,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+        );
+    private NetworkVariable<int> _curAnimHash = new NetworkVariable<int>(
+        0,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+        );
+    private NetworkVariable<bool> _isFacingRight = new NetworkVariable<bool>(
+        false,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+        );
+
 
     private void Awake()
     {
@@ -45,15 +63,15 @@ public class PlayerController : NetworkBehaviour
 
     private void OnEnable()
     {
-        if (IsSpawned == false)
+        if (IsSpawned == true)
         {
-            BindInput();
+            BindLocalEvents();
         }
     }
 
     private void OnDisable()
     {
-        if (IsSpawned == false)
+        if (IsSpawned == true)
         {
             _attackAction.started -= OnAttackStarted;
             _attackAction.canceled -= OnAttackCanceled;
@@ -62,6 +80,7 @@ public class PlayerController : NetworkBehaviour
 
     protected void Start()
     {
+        _stateMachine = new PlayerStateMachine(this);
         _stateMachine.AddState(new PlayerIdleState());
         _stateMachine.AddState(new PlayerRunState());
         _stateMachine.AddState(new PlayerJumpState());
@@ -92,34 +111,63 @@ public class PlayerController : NetworkBehaviour
         _stateMachine.FixedUpdate();
     }
 
-    private void BindInput()
+    private void BindLocalEvents()
     {
         _attackAction = _playerInput.actions["Attack"];
         _attackAction.started += OnAttackStarted;
         _attackAction.canceled += OnAttackCanceled;
+        _playerAttack.OnFireStateChanged += UpdateFireLayer;
+    }
+
+    private void BindRemoteEvents()
+    {
+        _isFacingRight.OnValueChanged += (oldValue, newValue) =>
+        {
+            _spriteRenderer.flipX = newValue;
+        };
+
+        _curAnimHash.OnValueChanged += (oldHash, newHash) =>
+        {
+            if (!IsOwner)
+            {
+                // 리모트 플레이어 화면에서도 부드럽게 전환
+                _animator.CrossFade(newHash, 0.1f);
+            }
+        };
+
+        _curFireState.OnValueChanged += (oldState, newState) =>
+        {
+            UpdateFireLayer(newState);
+        };
     }
 
     //Network
     public override void OnNetworkSpawn()
     {
-        _stateMachine = new PlayerStateMachine(this);
         if (IsOwner)
         {
-            BindInput();
+            BindLocalEvents();
         }
         else
         {
-            _playerInput.enabled = false;
+            BindRemoteEvents();
+            _playerInput.enabled = false; 
         }
     }
 
     //Input System
     private void OnMove(InputValue value)
     {
+        if (!IsOwner)
+        {
+            return;
+        }
+
         _moveInput = value.Get<float>();
         if (_moveInput != 0)
         {
-            _spriteRenderer.flipX = _moveInput > 0;
+            _isFacingRight.Value = _moveInput > 0;
+            _spriteRenderer.flipX = _isFacingRight.Value;
             _direction = Mathf.Sign(_moveInput);
         }
     }
@@ -139,6 +187,26 @@ public class PlayerController : NetworkBehaviour
         _playerAttack.Fire(_direction);
     }
 
+    private void UpdateFireLayer(FireState state)
+    {
+        if(IsOwner)
+        {
+            _curFireState.Value = state;
+        }
+
+        switch (state)
+        {
+            case FireState.Idle:
+                _animator.SetLayerWeight(1, 0f);
+                break;
+            case FireState.Charging:
+                _animator.SetLayerWeight(1, 1f);
+                break;
+            case FireState.PostFire:
+                //Stop Chrging Effect
+                break;
+        }
+    }
 
 
     public void ChangeState<T>() where T : PlayerBaseState
@@ -148,6 +216,10 @@ public class PlayerController : NetworkBehaviour
 
     public void PlayAnimation(int animHash, float crossFadeTime = 0.1f)
     {
+        if (IsOwner)
+        {
+        _curAnimHash.Value = animHash;
+        }
         _animator.CrossFade(animHash, crossFadeTime);
     }
 
