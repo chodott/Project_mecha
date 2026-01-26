@@ -23,6 +23,8 @@ public abstract class PlayerBaseState : IState<PlayerController>
     {
         _controller.PlayAnimation(animHash, crossFadeTime);
     }
+
+    public virtual void FixedUpdate() { }
 }
 
 

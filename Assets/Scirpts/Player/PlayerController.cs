@@ -1,12 +1,10 @@
-using System;
-using System.Collections;
-using TMPro;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
     private float _moveInput;
     private float _direction = -1;
@@ -41,24 +39,25 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        _stateMachine = new PlayerStateMachine(this);
         _playerAttack = GetComponent<PlayerAttack>();
-
         _playerInput = GetComponent<PlayerInput>();
-        _attackAction = _playerInput.actions["Attack"];
-
     }
 
     private void OnEnable()
     {
-        _attackAction.started += OnAttackStarted;
-        _attackAction.canceled += OnAttackCanceled;
+        if (IsSpawned == false)
+        {
+            BindInput();
+        }
     }
 
     private void OnDisable()
     {
-        _attackAction.started -= OnAttackStarted;
-        _attackAction.canceled -= OnAttackCanceled;
+        if (IsSpawned == false)
+        {
+            _attackAction.started -= OnAttackStarted;
+            _attackAction.canceled -= OnAttackCanceled;
+        }
     }
 
     protected void Start()
@@ -75,11 +74,44 @@ public class PlayerController : MonoBehaviour
 
     protected void Update()
     {
+        if (!IsOwner)
+        {
+            return;
+        }
+
         _stateMachine.Update();
         _stateMachine.OnMove(_moveInput);
     }
 
+    protected void FixedUpdate()
+    {
+        if (!IsOwner)
+        {
+            return;
+        }
+        _stateMachine.FixedUpdate();
+    }
 
+    private void BindInput()
+    {
+        _attackAction = _playerInput.actions["Attack"];
+        _attackAction.started += OnAttackStarted;
+        _attackAction.canceled += OnAttackCanceled;
+    }
+
+    //Network
+    public override void OnNetworkSpawn()
+    {
+        _stateMachine = new PlayerStateMachine(this);
+        if (IsOwner)
+        {
+            BindInput();
+        }
+        else
+        {
+            _playerInput.enabled = false;
+        }
+    }
 
     //Input System
     private void OnMove(InputValue value)

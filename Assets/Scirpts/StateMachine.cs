@@ -7,6 +7,8 @@ public interface IState<in TOwner>
     public void Enter(TOwner owner);
     public void Exit();
     public void Update();
+
+    public void FixedUpdate();
 }
 
 public class StateMachine<TOwner> where TOwner : MonoBehaviour
@@ -41,6 +43,11 @@ public class StateMachine<TOwner> where TOwner : MonoBehaviour
     public void Update()
     {
         _curState?.Update();
+    }
+
+    public void FixedUpdate()
+    {
+        _curState?.FixedUpdate();
     }
 
 
