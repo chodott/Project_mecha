@@ -13,7 +13,7 @@ public class BaseBullet : MonoBehaviour, IPoolable
 
     protected virtual void Move()
     {
-        transform.Translate(_moveDirection * _speed * Time.deltaTime);
+        transform.Translate(_moveDirection * _speed * Time.deltaTime, Space.World);
     }
 
     protected virtual void Update()
@@ -30,7 +30,6 @@ public class BaseBullet : MonoBehaviour, IPoolable
     {
         transform.position = position;
         _moveDirection = direction;
-        _spriteRenderer.flipX = _moveDirection.x < 0;
     }
 
     public void OnSpawn()

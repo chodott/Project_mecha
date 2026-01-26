@@ -90,9 +90,10 @@ public class PlayerAttack : NetworkBehaviour
         Vector3 directionVector = transform.right * direction;
         float xOffset = MathF.Abs(_muzzleTransform.localPosition.x) * direction;
         Vector3 launchPosition = transform.position + new Vector3(xOffset, _muzzleTransform.localPosition.y, 0);
+        Quaternion rotation = direction > 0 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
 
         BaseBullet bulletPrefab = chargeTime >= _fullChargeTime ? _fullChargeBullet : _defaultBullet;
-        GameObject go = Instantiate(bulletPrefab.gameObject, launchPosition, Quaternion.identity);
+        GameObject go = Instantiate(bulletPrefab.gameObject, launchPosition, rotation);
 
         NetworkObject no = go.GetComponent<NetworkObject>();
         no.Spawn();
