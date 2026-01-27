@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public abstract class PlayerBaseState : IState<PlayerController>
@@ -14,17 +15,21 @@ public abstract class PlayerBaseState : IState<PlayerController>
         _controller = null;
     }
 
-    public virtual void Update(){}
+    public virtual void Update() { }
 
     public virtual void OnMove(float x) { }
     public virtual void OnJump() { }
 
-    protected void PlayAnim(int animHash, float crossFadeTime = 0.1f)
+    protected void PlayAnim(int animHash, float crossFadeTime = 0)
     {
         _controller.PlayAnimation(animHash, crossFadeTime);
     }
 
     public virtual void FixedUpdate() { }
+
+    public virtual void OnHit() { }
+
+    public virtual void OnEndedHit() { }
 }
 
 
@@ -33,12 +38,12 @@ public class PlayerIdleState : PlayerBaseState
     public override void Enter(PlayerController owner)
     {
         base.Enter(owner);
-        PlayAnim(PlayerAnim.Idle, 0.1f);
+        PlayAnim(PlayerAnim.Idle);
     }
 
-    public override void OnMove(float x) 
+    public override void OnMove(float x)
     {
-        if (Mathf.Abs(x) > 0.01f) 
+        if (Mathf.Abs(x) > 0.01f)
         {
             _controller.ChangeState<PlayerRunState>();
         }
@@ -48,22 +53,27 @@ public class PlayerIdleState : PlayerBaseState
     {
         _controller.ChangeState<PlayerJumpState>();
     }
+
+    public override void OnHit()
+    {
+        _controller.ChangeState<PlayerStunState>();
+    }
 }
 
 
-public class PlayerRunState: PlayerBaseState
+public class PlayerRunState : PlayerBaseState
 {
     public override void Enter(PlayerController owner)
     {
         base.Enter(owner);
-        PlayAnim(PlayerAnim.Run, 0.1f);
+        PlayAnim(PlayerAnim.Run);
     }
 
     public override void OnMove(float x)
     {
-        if(Mathf.Abs(x) < 0.01f)
+        if (Mathf.Abs(x) < 0.01f)
         {
-            if(Mathf.Abs(_controller.Velocity.x) < 0.01f)
+            if (Mathf.Abs(_controller.Velocity.x) < 0.01f)
             {
                 _controller.ChangeState<PlayerIdleState>();
                 return;
@@ -76,6 +86,11 @@ public class PlayerRunState: PlayerBaseState
     public override void OnJump()
     {
         _controller.ChangeState<PlayerJumpState>();
+    }
+
+    public override void OnHit()
+    {
+        _controller.ChangeState<PlayerStunState>();
     }
 }
 
@@ -91,10 +106,15 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void Update()
     {
-        if(_controller.Velocity.y < -0.1f)
+        if (_controller.Velocity.y < -0.1f)
         {
             _controller.ChangeState<PlayerFallState>();
         }
+    }
+
+    public override void OnHit()
+    {
+        _controller.ChangeState<PlayerStunState>();
     }
 }
 
@@ -102,10 +122,15 @@ public class PlayerFallState : PlayerBaseState
 {
     public override void Update()
     {
-        if(_controller.IsGrounded() == true)
+        if (_controller.IsGrounded() == true)
         {
             _controller.ChangeState<PlayerLandingState>();
         }
+    }
+
+    public override void OnHit()
+    {
+        _controller.ChangeState<PlayerStunState>();
     }
 }
 
@@ -114,12 +139,12 @@ public class PlayerLandingState : PlayerBaseState
     public override void Enter(PlayerController owner)
     {
         base.Enter(owner);
-        PlayAnim(PlayerAnim.Landing, 0.1f);
+        PlayAnim(PlayerAnim.Landing);
     }
     public override void Update()
     {
         var stateInfo = _controller.GetAnimStateInfo();
-        if(stateInfo.shortNameHash == PlayerAnim.Landing && stateInfo.normalizedTime >= 0.9f)
+        if (stateInfo.shortNameHash == PlayerAnim.Landing && stateInfo.normalizedTime >= 0.9f)
         {
             if (Mathf.Abs(_controller.Velocity.x) < 0.1f)
             {
@@ -130,5 +155,25 @@ public class PlayerLandingState : PlayerBaseState
                 _controller.ChangeState<PlayerRunState>();
             }
         }
+    }
+
+    public override void OnHit()
+    {
+        _controller.ChangeState<PlayerStunState>();
+    }
+}
+
+
+public class PlayerStunState : PlayerBaseState
+{
+    public override void Enter(PlayerController owner)
+    {
+        base.Enter(owner);
+        PlayAnim(PlayerAnim.Stun);
+    }
+
+    public override void OnEndedHit()
+    {
+        _controller.ChangeState<PlayerIdleState>();
     }
 }

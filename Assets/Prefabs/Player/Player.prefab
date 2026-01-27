@@ -145,6 +145,7 @@ MonoBehaviour:
   _rigidBody: {fileID: 3479285815771615000}
   _movingSpeed: 2.5
   _jumpForce: 5
+  _stunDuration: 1
   _groundLayer:
     serializedVersion: 2
     m_Bits: 1
@@ -162,9 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1809aa0d783f8b94a922d7495a4fa762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   _defaultBullet: {fileID: 4463206722199831556, guid: b96132353920d0b48896276c2c64b29d, type: 3}
   _fullChargeBullet: {fileID: 5968219539960060225, guid: f297eb38fa629574d8c49444a23c295f, type: 3}
-  _animator: {fileID: 2440884185768349730}
   _fullChargeTime: 1
   _muzzleTransform: {fileID: 7591828926562202150}
   _fireCoolDown: 1

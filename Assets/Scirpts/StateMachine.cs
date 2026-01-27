@@ -37,6 +37,11 @@ public class StateMachine<TOwner> where TOwner : MonoBehaviour
             _curState = nextState;
             _curState.Enter(_owner);
         }
+
+        else
+        {
+            Debug.Log($"{nameof(T)} is Missing State");
+        }
  
     }
 

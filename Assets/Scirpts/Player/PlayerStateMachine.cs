@@ -16,4 +16,7 @@ public class PlayerStateMachine : StateMachine<PlayerController>
 
     public void OnMove(float x) => _curPlayerState?.OnMove(x);
     public void OnJump() => _curPlayerState?.OnJump();
+
+    public void OnHit() => _curPlayerState?.OnHit();
+    public void OnEndedHit() => _curPlayerState?.OnEndedHit();
 }

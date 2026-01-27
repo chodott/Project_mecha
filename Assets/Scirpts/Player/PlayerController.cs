@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Animations;
@@ -28,6 +29,8 @@ public class PlayerController : NetworkBehaviour, IDamageable
     private float _movingSpeed = 5f;
     [SerializeField]
     private float _jumpForce = 3f;
+    [SerializeField]
+    private float _stunDuration = 1f;
 
 
     //Collision
@@ -53,6 +56,10 @@ public class PlayerController : NetworkBehaviour, IDamageable
         NetworkVariableReadPermission.Everyone,
         NetworkVariableWritePermission.Owner
         );
+    private NetworkVariable<bool> _isStunned = new NetworkVariable<bool>(
+        false,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server);
 
 
     private void Awake()
@@ -86,7 +93,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
         _stateMachine.AddState(new PlayerJumpState());
         _stateMachine.AddState(new PlayerFallState());
         _stateMachine.AddState(new PlayerLandingState());
-
+        _stateMachine.AddState(new PlayerStunState());
 
         ChangeState<PlayerIdleState>();
     }
@@ -130,7 +137,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
         {
             if (!IsOwner)
             {
-                _animator.CrossFade(newHash, 0.1f);
+                _animator.CrossFade(newHash, 0);
             }
         };
 
@@ -152,12 +159,28 @@ public class PlayerController : NetworkBehaviour, IDamageable
             BindRemoteEvents();
             _playerInput.enabled = false;
         }
+
+        _isStunned.OnValueChanged += (oldValue, newValue) =>
+        {
+            if (newValue == true)
+            {
+                _stateMachine.OnHit();
+            }
+            else
+            {
+                _stateMachine.OnEndedHit();
+            }
+        };
     }
 
-    [ClientRpc]
-    void PlayHitAnimationClientRpc()
+    public void ApplyStun(float duration)
     {
-        PlayAnimation(PlayerAnim.Hit);
+        if (IsServer == false)
+        {
+            return;
+        }
+
+        StartCoroutine(StunCoroutine(duration));
     }
 
 
@@ -214,6 +237,16 @@ public class PlayerController : NetworkBehaviour, IDamageable
         }
     }
 
+    private IEnumerator StunCoroutine(float duration)
+    {
+        _isStunned.Value = true;
+
+        // 서버에서 정확히 정해진 시간만큼 대기
+        yield return new WaitForSeconds(duration);
+
+        _isStunned.Value = false;
+    }
+
 
     public void ChangeState<T>() where T : PlayerBaseState
     {
@@ -222,6 +255,11 @@ public class PlayerController : NetworkBehaviour, IDamageable
 
     public void PlayAnimation(int animHash, float crossFadeTime = 0.1f)
     {
+        if(animHash == _curAnimHash.Value)
+        {
+            return;
+        }
+
         _curAnimHash.Value = animHash;
         _animator.CrossFade(animHash, crossFadeTime);
     }
@@ -248,6 +286,6 @@ public class PlayerController : NetworkBehaviour, IDamageable
 
     public void TakeDamage(float damageAmount)
     {
-        PlayHitAnimationClientRpc();
+        ApplyStun(_stunDuration);
     }
 }
