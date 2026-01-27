@@ -1,5 +1,7 @@
 using System;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public abstract class PlayerBaseState : IState<PlayerController>
 {
@@ -17,7 +19,13 @@ public abstract class PlayerBaseState : IState<PlayerController>
 
     public virtual void Update() { }
 
-    public virtual void OnMove(float x) { }
+    public virtual void OnMove(float direction)
+    {
+        if (Mathf.Abs(direction) > 0.01f)
+        {
+            _controller.ChangeMoveDirection(direction);
+        }
+    }
     public virtual void OnJump() { }
 
     protected void PlayAnim(int animHash, float crossFadeTime = 0)
@@ -41,10 +49,11 @@ public class PlayerIdleState : PlayerBaseState
         PlayAnim(PlayerAnim.Idle);
     }
 
-    public override void OnMove(float x)
+    public override void OnMove(float direction)
     {
-        if (Mathf.Abs(x) > 0.01f)
+        if (Mathf.Abs(direction) > 0.01f)
         {
+            _controller.ChangeMoveDirection(direction);
             _controller.ChangeState<PlayerRunState>();
         }
     }
@@ -69,9 +78,9 @@ public class PlayerRunState : PlayerBaseState
         PlayAnim(PlayerAnim.Run);
     }
 
-    public override void OnMove(float x)
+    public override void OnMove(float direction)
     {
-        if (Mathf.Abs(x) < 0.01f)
+        if (Mathf.Abs(direction) < 0.01f)
         {
             if (Mathf.Abs(_controller.Velocity.x) < 0.01f)
             {
@@ -80,6 +89,7 @@ public class PlayerRunState : PlayerBaseState
             }
         }
 
+        base.OnMove(direction);
         _controller.Move();
     }
 
@@ -170,6 +180,11 @@ public class PlayerStunState : PlayerBaseState
     {
         base.Enter(owner);
         PlayAnim(PlayerAnim.Stun);
+    }
+
+    public override void OnMove(float direction)
+    {
+        //Do nothing Input
     }
 
     public override void OnEndedHit()

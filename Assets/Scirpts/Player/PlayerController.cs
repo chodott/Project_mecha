@@ -100,18 +100,18 @@ public class PlayerController : NetworkBehaviour, IDamageable
 
     protected void Update()
     {
-        if (!IsOwner)
+        if (IsOwner == false)
         {
             return;
         }
 
-        _stateMachine.Update();
         _stateMachine.OnMove(_moveInput);
+        _stateMachine.Update();
     }
 
     protected void FixedUpdate()
     {
-        if (!IsOwner)
+        if (IsOwner == false)
         {
             return;
         }
@@ -193,12 +193,6 @@ public class PlayerController : NetworkBehaviour, IDamageable
         }
 
         _moveInput = value.Get<float>();
-        if (_moveInput != 0)
-        {
-            _isFacingRight.Value = _moveInput > 0;
-            _spriteRenderer.flipX = _isFacingRight.Value;
-            _direction = Mathf.Sign(_moveInput);
-        }
     }
 
     private void OnJump(InputValue value)
@@ -255,13 +249,23 @@ public class PlayerController : NetworkBehaviour, IDamageable
 
     public void PlayAnimation(int animHash, float crossFadeTime = 0.1f)
     {
-        if(animHash == _curAnimHash.Value)
+        if (animHash == _curAnimHash.Value)
         {
             return;
         }
 
         _curAnimHash.Value = animHash;
         _animator.CrossFade(animHash, crossFadeTime);
+    }
+
+    public void ChangeMoveDirection(float direction)
+    {
+        if (direction != 0)
+        {
+            _isFacingRight.Value = direction > 0;
+            _spriteRenderer.flipX = _isFacingRight.Value;
+            _direction = Mathf.Sign(direction);
+        }
     }
 
     public void Move()
