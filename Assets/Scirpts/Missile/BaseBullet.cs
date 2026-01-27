@@ -1,7 +1,7 @@
 using Unity.Netcode;
 using UnityEngine;
 
-public class BaseBullet : NetworkBehaviour, IPoolable
+public class BaseBullet : NetworkPoolable
 {
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] protected Animator _animator;
@@ -9,8 +9,6 @@ public class BaseBullet : NetworkBehaviour, IPoolable
     [SerializeField] protected float _damage;
 
     private Vector2 _moveDirection;
-
-    public int PoolKey { get; set; }
 
     protected virtual void Move()
     {
@@ -31,7 +29,7 @@ public class BaseBullet : NetworkBehaviour, IPoolable
 
         if (collision.TryGetComponent<NetworkObject>(out var target))
         {
-            if(target.OwnerClientId == OwnerClientId)
+            if (target.OwnerClientId == OwnerClientId)
             {
                 return;
             }
@@ -52,12 +50,11 @@ public class BaseBullet : NetworkBehaviour, IPoolable
         _moveDirection = direction;
     }
 
-    public void OnSpawn()
+    public override void OnSpawn()
     {
-
     }
 
-    public void OnDespawn()
+    public override void OnDespawn()
     {
     }
 }

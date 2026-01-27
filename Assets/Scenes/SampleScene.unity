@@ -369,6 +369,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9063922645f4d478442b65cb0ce550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkedPrefabsToPool:
+  - {fileID: 4463206722199831556, guid: b96132353920d0b48896276c2c64b29d, type: 3}
+  - {fileID: 5968219539960060225, guid: f297eb38fa629574d8c49444a23c295f, type: 3}
 --- !u!4 &1038003143
 Transform:
   m_ObjectHideFlags: 0

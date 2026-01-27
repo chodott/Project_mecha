@@ -26,12 +26,6 @@ public class PlayerAttack : NetworkBehaviour
 
     public event Action<FireState> OnFireStateChanged;
 
-    protected void Start()
-    {
-        ObjectPoolManager.Instance.PreloadDefault(_defaultBullet, 10);
-        ObjectPoolManager.Instance.PreloadDefault(_fullChargeBullet, 5);
-    }
-
     protected void Update()
     {
         if (_isCharging)

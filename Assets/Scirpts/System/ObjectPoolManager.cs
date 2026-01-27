@@ -1,9 +1,13 @@
 using System.Collections.Generic;
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectPoolManager : MonoBehaviour
 {
+    [Header("Networking Pool Settings")]
+    [SerializeField] private List<NetworkPoolable> networkedPrefabsToPool;
+
     public static ObjectPoolManager Instance { get; private set; }
     private void Awake()
     {
@@ -14,6 +18,25 @@ public class ObjectPoolManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void Start()
+    {
+        if(NetworkManager.Singleton != null)
+        {
+            RegisterNetworkPool();
+        }
+    }
+
+    private void RegisterNetworkPool()
+    {
+        foreach (var prefab in networkedPrefabsToPool)
+        {
+            NetworkManager.Singleton.PrefabHandler.AddHandler(
+                prefab.gameObject,
+                new PooledNetworkObjectHandler(prefab, this)
+                );
+        }
     }
 
     private class ComponentPool<T> where T : MonoBehaviour, IPoolable
@@ -31,6 +54,7 @@ public class ObjectPoolManager : MonoBehaviour
             T newObj = (_queue.Count > 0) ? _queue.Dequeue() : Instantiate(_prefab);
             newObj.gameObject.SetActive(true);
             newObj.OnSpawn();
+            newObj.PoolKey = _prefab.gameObject.name;
             return newObj;
         }
         public void Release(T obj)
@@ -43,7 +67,7 @@ public class ObjectPoolManager : MonoBehaviour
 
     public void PreloadDefault<T>(T prefab, int count) where T : MonoBehaviour, IPoolable
     {
-        int key = prefab.gameObject.GetInstanceID();
+        string key = prefab.gameObject.name;
 
         if (!_pools.ContainsKey(key))
         {
@@ -61,14 +85,21 @@ public class ObjectPoolManager : MonoBehaviour
         }
     }
 
-    private Dictionary<int, object> _pools = new Dictionary<int, object>();
+    private Dictionary<string, object> _pools = new Dictionary<string, object>();
 
     public T Get<T>(T prefab) where T : MonoBehaviour, IPoolable
     {
-        int key = prefab.gameObject.GetInstanceID();
+        string key = prefab.gameObject.name;
         if (!_pools.ContainsKey(key))
         {
             _pools[key] = new ComponentPool<T>(prefab);
+            
+        }
+
+        if(_pools[key] is not ComponentPool<T>)
+        {
+            Debug.LogError($"Pool type mismatch for key: {key}");
+            return null;
         }
         var pool = _pools[key] as ComponentPool<T>;
 
@@ -77,7 +108,14 @@ public class ObjectPoolManager : MonoBehaviour
 
     public void Release<T>(T obj) where T : MonoBehaviour, IPoolable
     {
-        int key = obj.PoolKey;
+        string key = obj.PoolKey;
+        if(_pools.ContainsKey(key) == false)
+        {
+            Debug.LogWarning($"No pool found for key: {key}. Destroying object.");
+            Destroy(obj.gameObject);
+            return;
+        }
+
         var pool = _pools[key] as ComponentPool<T>;
         pool.Release(obj);
     }
