@@ -5,7 +5,7 @@ using UnityEngine.Animations;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
 
-public class PlayerController : NetworkBehaviour
+public class PlayerController : NetworkBehaviour, IDamageable
 {
     private float _moveInput;
     private float _direction = -1;
@@ -150,7 +150,7 @@ public class PlayerController : NetworkBehaviour
         else
         {
             BindRemoteEvents();
-            _playerInput.enabled = false; 
+            _playerInput.enabled = false;
         }
     }
 
@@ -189,7 +189,7 @@ public class PlayerController : NetworkBehaviour
 
     private void UpdateFireLayer(FireState state)
     {
-        if(IsOwner)
+        if (IsOwner)
         {
             _curFireState.Value = state;
         }
@@ -218,7 +218,7 @@ public class PlayerController : NetworkBehaviour
     {
         if (IsOwner)
         {
-        _curAnimHash.Value = animHash;
+            _curAnimHash.Value = animHash;
         }
         _animator.CrossFade(animHash, crossFadeTime);
     }
@@ -241,5 +241,9 @@ public class PlayerController : NetworkBehaviour
     public AnimatorStateInfo GetAnimStateInfo()
     {
         return _animator.GetCurrentAnimatorStateInfo(0);
+    }
+
+    public void TakeDamage(float damageAmount)
+    {
     }
 }

@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class BaseBullet : MonoBehaviour, IPoolable
+public class BaseBullet : NetworkBehaviour, IPoolable
 {
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] protected Animator _animator;
@@ -23,7 +24,15 @@ public class BaseBullet : MonoBehaviour, IPoolable
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if(IsServer)
+        {
+            IDamageable damageable = collision.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                damageable.TakeDamage(_damage);
+            }
+            Destroy(gameObject);
+        }
     }
 
     public void Launch(Vector2 position, Vector2 direction)
