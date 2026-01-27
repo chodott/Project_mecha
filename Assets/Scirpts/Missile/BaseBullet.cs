@@ -24,15 +24,26 @@ public class BaseBullet : NetworkBehaviour, IPoolable
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (IsServer)
+        if (IsServer == false)
         {
-            IDamageable damageable = collision.GetComponent<IDamageable>();
-            if (damageable != null)
-            {
-                damageable.TakeDamage(_damage);
-            }
-            Destroy(gameObject);
+            return;
         }
+
+        if (collision.TryGetComponent<NetworkObject>(out var target))
+        {
+            if(target.OwnerClientId == OwnerClientId)
+            {
+                return;
+            }
+        }
+
+        IDamageable damageable = collision.GetComponent<IDamageable>();
+        if (damageable != null)
+        {
+            damageable.TakeDamage(_damage);
+        }
+        Destroy(gameObject);
+
     }
 
     public void Launch(Vector2 position, Vector2 direction)
@@ -43,7 +54,7 @@ public class BaseBullet : NetworkBehaviour, IPoolable
 
     public void OnSpawn()
     {
-        
+
     }
 
     public void OnDespawn()

@@ -85,7 +85,7 @@ public class PlayerAttack : NetworkBehaviour
 
     //Network
     [ServerRpc]
-    private void FireServerRpc(float direction, float chargeTime)
+    private void FireServerRpc(float direction, float chargeTime, ServerRpcParams rpcParams = default)
     {
         Vector3 directionVector = transform.right * direction;
         float xOffset = MathF.Abs(_muzzleTransform.localPosition.x) * direction;
@@ -96,7 +96,7 @@ public class PlayerAttack : NetworkBehaviour
         GameObject go = Instantiate(bulletPrefab.gameObject, launchPosition, rotation);
 
         NetworkObject no = go.GetComponent<NetworkObject>();
-        no.Spawn();
+        no.SpawnWithOwnership(rpcParams.Receive.SenderClientId);
         go.GetComponent<BaseBullet>().Launch(launchPosition, directionVector);
     }
 }
