@@ -175,7 +175,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
 
     public void ApplyStun(float duration)
     {
-        if (IsServer == false)
+        if (IsServer == false || _isStunned.Value == true)
         {
             return;
         }
@@ -235,7 +235,6 @@ public class PlayerController : NetworkBehaviour, IDamageable
     {
         _isStunned.Value = true;
 
-        // 서버에서 정확히 정해진 시간만큼 대기
         yield return new WaitForSeconds(duration);
 
         _isStunned.Value = false;
@@ -249,12 +248,10 @@ public class PlayerController : NetworkBehaviour, IDamageable
 
     public void PlayAnimation(int animHash, float crossFadeTime = 0.1f)
     {
-        if (animHash == _curAnimHash.Value)
+        if(IsOwner == true)
         {
-            return;
+            _curAnimHash.Value = animHash;
         }
-
-        _curAnimHash.Value = animHash;
         _animator.CrossFade(animHash, crossFadeTime);
     }
 
