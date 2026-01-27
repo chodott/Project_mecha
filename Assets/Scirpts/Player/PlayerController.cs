@@ -80,8 +80,8 @@ public class PlayerController : NetworkBehaviour, IDamageable
     {
         if (IsSpawned == true)
         {
-            _attackAction.started -= OnAttackStarted;
-            _attackAction.canceled -= OnAttackCanceled;
+            _attackAction.started -= OnStartCharging;
+            _attackAction.canceled -= OnEndedCharging;
         }
     }
 
@@ -121,8 +121,8 @@ public class PlayerController : NetworkBehaviour, IDamageable
     private void BindLocalEvents()
     {
         _attackAction = _playerInput.actions["Attack"];
-        _attackAction.started += OnAttackStarted;
-        _attackAction.canceled += OnAttackCanceled;
+        _attackAction.started += OnStartCharging;
+        _attackAction.canceled += OnEndedCharging;
         _playerAttack.OnFireStateChanged += UpdateFireLayer;
     }
 
@@ -200,14 +200,14 @@ public class PlayerController : NetworkBehaviour, IDamageable
         _stateMachine.OnJump();
     }
 
-    private void OnAttackStarted(InputAction.CallbackContext context)
+    private void OnStartCharging(InputAction.CallbackContext context)
     {
-        _playerAttack.StartCharging();
+        _stateMachine.OnStartCharging();
     }
 
-    private void OnAttackCanceled(InputAction.CallbackContext context)
+    private void OnEndedCharging(InputAction.CallbackContext context)
     {
-        _playerAttack.Fire(_direction);
+        _stateMachine.OnEndedCharging();
     }
 
     private void UpdateFireLayer(FireState state)
@@ -273,6 +273,21 @@ public class PlayerController : NetworkBehaviour, IDamageable
     public void Jump()
     {
         _rigidBody.linearVelocityY = _jumpForce;
+    }
+
+    public void Fire()
+    {
+        _playerAttack.Fire(_direction);
+    }
+
+    public void StartCharging()
+    {
+        _playerAttack.StartCharging();
+    }
+
+    public void BreakCharging()
+    {
+        _playerAttack.BreakCharging();
     }
 
     public bool IsGrounded()

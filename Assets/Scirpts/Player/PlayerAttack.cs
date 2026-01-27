@@ -33,22 +33,6 @@ public class PlayerAttack : NetworkBehaviour
             _curChargeTime += Time.deltaTime;
         }
     }
-    public void StartCharging()
-    {
-        _isCharging = true;
-        OnFireStateChanged(FireState.Charging);
-    }
-
-    public void Fire(float direction)
-    {
-        if(IsOwner == false)
-        {
-            return;
-        }
-
-        FireServerRpc(direction, _curChargeTime);
-        PlayLocalFire(direction);
-    }
 
     private IEnumerator FirePoseRoutine()
     {
@@ -57,7 +41,7 @@ public class PlayerAttack : NetworkBehaviour
         OnFireStateChanged(FireState.Idle);
     }
 
-    void PlayLocalFire(float direction)
+    private void PlayLocalFire(float direction)
     {
         //BaseBullet bulletPrefab = _curChargeTime >= _fullChargeTime ? _fullChargeBullet : _defaultBullet;
         //Vector3 directionVector = transform.right * direction;
@@ -75,6 +59,34 @@ public class PlayerAttack : NetworkBehaviour
             StopCoroutine(_firePoseRoutine);
         }
         _firePoseRoutine = StartCoroutine(FirePoseRoutine());
+    }
+
+    public void StartCharging()
+    {
+        _isCharging = true;
+        OnFireStateChanged(FireState.Charging);
+    }
+
+    public void Fire(float direction)
+    {
+        if (IsOwner == false)
+        {
+            return;
+        }
+
+        FireServerRpc(direction, _curChargeTime);
+        PlayLocalFire(direction);
+    }
+
+    public void BreakCharging()
+    {
+        _isCharging = false;
+        _curChargeTime = 0;
+
+        if (_firePoseRoutine != null)
+        {
+            StopCoroutine(_firePoseRoutine);
+        }
     }
 
     //Network

@@ -19,4 +19,7 @@ public class PlayerStateMachine : StateMachine<PlayerController>
 
     public void OnHit() => _curPlayerState?.OnHit();
     public void OnEndedHit() => _curPlayerState?.OnEndedHit();
+
+    public void OnStartCharging() => _curPlayerState?.OnStartCharging();
+    public void OnEndedCharging() => _curPlayerState?.OnEndedCharging();
 }

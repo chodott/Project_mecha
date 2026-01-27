@@ -38,6 +38,15 @@ public abstract class PlayerBaseState : IState<PlayerController>
     public virtual void OnHit() { }
 
     public virtual void OnEndedHit() { }
+
+    public virtual void OnStartCharging()
+    {
+        _controller.StartCharging();
+    }
+    public virtual void OnEndedCharging()
+    {
+        _controller.Fire();
+    }
 }
 
 
@@ -180,6 +189,7 @@ public class PlayerStunState : PlayerBaseState
     {
         base.Enter(owner);
         PlayAnim(PlayerAnim.Stun);
+        _controller.BreakCharging();
     }
 
     public override void OnMove(float direction)
@@ -190,5 +200,15 @@ public class PlayerStunState : PlayerBaseState
     public override void OnEndedHit()
     {
         _controller.ChangeState<PlayerIdleState>();
+    }
+
+    public override void OnStartCharging()
+    {
+        //Do nothing Input
+    }
+
+    public override void OnEndedCharging()
+    {
+        _controller.BreakCharging();
     }
 }
