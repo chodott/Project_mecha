@@ -154,6 +154,12 @@ public class PlayerController : NetworkBehaviour, IDamageable
         }
     }
 
+    [ClientRpc]
+    void PlayHitAnimationClientRpc()
+    {
+        PlayAnimation(PlayerAnim.Hit);
+    }
+
 
     //Input System
     private void OnMove(InputValue value)
@@ -216,10 +222,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
 
     public void PlayAnimation(int animHash, float crossFadeTime = 0.1f)
     {
-        if (IsOwner)
-        {
-            _curAnimHash.Value = animHash;
-        }
+        _curAnimHash.Value = animHash;
         _animator.CrossFade(animHash, crossFadeTime);
     }
 
@@ -245,5 +248,6 @@ public class PlayerController : NetworkBehaviour, IDamageable
 
     public void TakeDamage(float damageAmount)
     {
+        PlayHitAnimationClientRpc();
     }
 }

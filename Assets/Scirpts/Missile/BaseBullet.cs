@@ -24,7 +24,7 @@ public class BaseBullet : NetworkBehaviour, IPoolable
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if(IsServer)
+        if (IsServer)
         {
             IDamageable damageable = collision.GetComponent<IDamageable>();
             if (damageable != null)
