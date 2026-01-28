@@ -313,6 +313,16 @@ public class PlayerController : NetworkBehaviour, IDamageable
         _rigidBody.linearVelocityY = _jumpForce;
     }
 
+    public void SuperJump(float force)
+    {
+        _rigidBody.linearVelocityY = force;
+    }
+
+    public void OnSuperJump(float force)
+    {
+        _stateMachine.OnSuperJump(force);
+    }
+
     public void Fire()
     {
         _playerAttack.Fire(_direction);

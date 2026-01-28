@@ -47,6 +47,8 @@ public abstract class PlayerBaseState : IState<PlayerController>
     {
         _controller.Fire();
     }
+
+    public virtual void OnSuperJump(float force) { }
 }
 
 
@@ -157,13 +159,18 @@ public class PlayerFallState : PlayerBaseState
     {
         if (_controller.IsGrounded() == true)
         {
-            _controller.ChangeState<PlayerLandingState>();
+            //_controller.ChangeState<PlayerLandingState>();
         }
     }
 
     public override void OnHit()
     {
         _controller.ChangeState<PlayerStunState>();
+    }
+
+    public override void OnSuperJump(float force)
+    {
+        _controller.SuperJump(force);
     }
 }
 

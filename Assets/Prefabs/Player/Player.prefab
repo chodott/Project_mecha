@@ -149,7 +149,7 @@ MonoBehaviour:
   _stunDuration: 1
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 8
   _groundCheckPos: {fileID: 7740548413607491786}
   _groundCheckSize: {x: 0.3, y: 1}
 --- !u!114 &5174823995495723098
