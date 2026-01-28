@@ -1,0 +1,3627 @@
+fileFormatVersion: 2
+guid: d3c3f13d9f4fd9d4592c5d0f9f605738
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8376134094064555641
+    second: rushSprite_0
+  - first:
+      213: 848477744554240531
+    second: rushSprite_1
+  - first:
+      213: -7798372471894301456
+    second: rushSprite_2
+  - first:
+      213: -8643268571773457556
+    second: rushSprite_3
+  - first:
+      213: -7443170121882318534
+    second: rushSprite_4
+  - first:
+      213: -3567039265795718729
+    second: rushSprite_5
+  - first:
+      213: 2715458576954207926
+    second: rushSprite_6
+  - first:
+      213: 4885113783583882497
+    second: rushSprite_7
+  - first:
+      213: 2715845213456535781
+    second: rushSprite_8
+  - first:
+      213: 8619328720333967602
+    second: rushSprite_9
+  - first:
+      213: 1107582208757826495
+    second: rushSprite_10
+  - first:
+      213: -3376653326917325896
+    second: rushSprite_11
+  - first:
+      213: -5502032231178166275
+    second: rushSprite_12
+  - first:
+      213: 1931967734178748629
+    second: rushSprite_13
+  - first:
+      213: 4869809026992859700
+    second: rushSprite_14
+  - first:
+      213: 2429083340091834206
+    second: rushSprite_15
+  - first:
+      213: -7041864516615323001
+    second: rushSprite_16
+  - first:
+      213: -2783134317483718002
+    second: rushSprite_17
+  - first:
+      213: -6319296033634445795
+    second: rushSprite_18
+  - first:
+      213: -3640433938968479216
+    second: rushSprite_19
+  - first:
+      213: -5340583803893409195
+    second: rushSprite_20
+  - first:
+      213: -3495506383335814199
+    second: rushSprite_21
+  - first:
+      213: -4856974094862105934
+    second: rushSprite_22
+  - first:
+      213: -4566651619062851430
+    second: rushSprite_23
+  - first:
+      213: -1167230494459128645
+    second: rushSprite_24
+  - first:
+      213: 1707127258909643500
+    second: rushSprite_25
+  - first:
+      213: 764077164177652528
+    second: rushSprite_26
+  - first:
+      213: 6411759182496289026
+    second: rushSprite_27
+  - first:
+      213: 4245642224108518331
+    second: rushSprite_28
+  - first:
+      213: -8930558912507448840
+    second: rushSprite_29
+  - first:
+      213: -4501851003125010881
+    second: rushSprite_30
+  - first:
+      213: -6163692262150350903
+    second: rushSprite_31
+  - first:
+      213: -7348559509038368717
+    second: rushSprite_32
+  - first:
+      213: 2130054771889861376
+    second: rushSprite_33
+  - first:
+      213: -2525052590222218524
+    second: rushSprite_34
+  - first:
+      213: 4899513026419238514
+    second: rushSprite_35
+  - first:
+      213: 3190708295101763368
+    second: rushSprite_36
+  - first:
+      213: 9103094658766648512
+    second: rushSprite_37
+  - first:
+      213: -7409260301193057068
+    second: rushSprite_38
+  - first:
+      213: 6448671113684451181
+    second: rushSprite_39
+  - first:
+      213: -6510554600507478909
+    second: rushSprite_40
+  - first:
+      213: 7597763316042592071
+    second: rushSprite_41
+  - first:
+      213: 1105054836433856089
+    second: rushSprite_42
+  - first:
+      213: 6298856042170552127
+    second: rushSprite_43
+  - first:
+      213: 6731453163614139778
+    second: rushSprite_44
+  - first:
+      213: -674881000716039831
+    second: rushSprite_45
+  - first:
+      213: -6061514200765063856
+    second: rushSprite_46
+  - first:
+      213: 6971914229573504004
+    second: rushSprite_47
+  - first:
+      213: -86863012402814795
+    second: rushSprite_48
+  - first:
+      213: 6168427995250731014
+    second: rushSprite_49
+  - first:
+      213: 4933572450194138155
+    second: rushSprite_50
+  - first:
+      213: -2425245872478902635
+    second: rushSprite_51
+  - first:
+      213: -8952568557764629817
+    second: rushSprite_52
+  - first:
+      213: 8990876130663417281
+    second: rushSprite_53
+  - first:
+      213: 143447452007667970
+    second: rushSprite_54
+  - first:
+      213: 105005006571202848
+    second: rushSprite_55
+  - first:
+      213: 7703520414909025374
+    second: rushSprite_56
+  - first:
+      213: 3523480344899691245
+    second: rushSprite_57
+  - first:
+      213: 4921726723978267200
+    second: rushSprite_58
+  - first:
+      213: -8123969269892980894
+    second: rushSprite_59
+  - first:
+      213: 6747223549622482677
+    second: rushSprite_60
+  - first:
+      213: 401391984191132850
+    second: rushSprite_61
+  - first:
+      213: -7666343494853836964
+    second: rushSprite_62
+  - first:
+      213: -6859478235177515974
+    second: rushSprite_63
+  - first:
+      213: 2619286457144347126
+    second: rushSprite_64
+  - first:
+      213: 7181075903913233652
+    second: rushSprite_65
+  - first:
+      213: 6914040950464762113
+    second: rushSprite_66
+  - first:
+      213: -7811888674599339182
+    second: rushSprite_67
+  - first:
+      213: -38732726056433206
+    second: rushSprite_68
+  - first:
+      213: 7776593092769425720
+    second: rushSprite_69
+  - first:
+      213: 6885768789719531634
+    second: rushSprite_70
+  - first:
+      213: 7996568500666594407
+    second: rushSprite_71
+  - first:
+      213: 5008243058439856235
+    second: rushSprite_72
+  - first:
+      213: 4185890946639332182
+    second: rushSprite_73
+  - first:
+      213: -893367422688603624
+    second: rushSprite_74
+  - first:
+      213: -5549377711212043010
+    second: rushSprite_75
+  - first:
+      213: -3170443286735911523
+    second: rushSprite_76
+  - first:
+      213: 6008847671575313304
+    second: rushSprite_77
+  - first:
+      213: 8608321693631147473
+    second: rushSprite_78
+  - first:
+      213: -1005726148400730240
+    second: rushSprite_79
+  - first:
+      213: 6981640606179745168
+    second: rushSprite_80
+  - first:
+      213: -8780936808423099123
+    second: rushSprite_81
+  - first:
+      213: -4764956668724308163
+    second: rushSprite_82
+  - first:
+      213: 605171484490942516
+    second: rushSprite_83
+  - first:
+      213: 2844706920983197957
+    second: rushSprite_84
+  - first:
+      213: -9065335698084892147
+    second: rushSprite_85
+  - first:
+      213: 1443515527740311103
+    second: rushSprite_86
+  - first:
+      213: 4288430959869402077
+    second: rushSprite_87
+  - first:
+      213: 8232094057897006647
+    second: rushSprite_88
+  - first:
+      213: -496610542772484264
+    second: rushSprite_89
+  - first:
+      213: -1030827099380952091
+    second: rushSprite_90
+  - first:
+      213: -4442332845040173257
+    second: rushSprite_91
+  - first:
+      213: -8025607807599926134
+    second: rushSprite_92
+  - first:
+      213: -5260563351550553368
+    second: rushSprite_93
+  - first:
+      213: 4322665074033107054
+    second: rushSprite_94
+  - first:
+      213: -7180241168578520979
+    second: rushSprite_95
+  - first:
+      213: -8669879054437451537
+    second: rushSprite_96
+  - first:
+      213: 7743570059624358917
+    second: rushSprite_97
+  - first:
+      213: -7144971283058222204
+    second: rushSprite_98
+  - first:
+      213: 5393997431700092551
+    second: rushSprite_99
+  - first:
+      213: 9084524159647988189
+    second: rushSprite_100
+  - first:
+      213: 5284681361497269627
+    second: rushSprite_101
+  - first:
+      213: 8844007601621785956
+    second: rushSprite_102
+  - first:
+      213: 7876899932602293213
+    second: rushSprite_103
+  - first:
+      213: -1459854832501480299
+    second: rushSprite_104
+  - first:
+      213: -3503439624352348840
+    second: rushSprite_105
+  - first:
+      213: -3837725021533258158
+    second: rushSprite_106
+  - first:
+      213: 2477369326583115161
+    second: rushSprite_107
+  - first:
+      213: 3874148701735306799
+    second: rushSprite_108
+  - first:
+      213: 131221751925118391
+    second: rushSprite_109
+  - first:
+      213: -1917363972723226820
+    second: rushSprite_110
+  - first:
+      213: 7175850584549942178
+    second: rushSprite_111
+  - first:
+      213: 8723561810726154440
+    second: rushSprite_112
+  - first:
+      213: 2626699954978305767
+    second: rushSprite_113
+  - first:
+      213: 4624874145822131098
+    second: rushSprite_114
+  - first:
+      213: 6122098109345928537
+    second: rushSprite_115
+  - first:
+      213: 5915686010997110217
+    second: rushSprite_116
+  - first:
+      213: 5400454973564742665
+    second: rushSprite_117
+  - first:
+      213: 469225966197223294
+    second: rushSprite_118
+  - first:
+      213: -2672889883352217153
+    second: rushSprite_119
+  - first:
+      213: -3263806010613384650
+    second: rushSprite_120
+  - first:
+      213: -1633182478994246080
+    second: rushSprite_121
+  - first:
+      213: 7481016868934933541
+    second: rushSprite_122
+  - first:
+      213: -386444033391012388
+    second: rushSprite_123
+  - first:
+      213: -3430993527400364186
+    second: rushSprite_124
+  - first:
+      213: 8582494973065723085
+    second: rushSprite_125
+  - first:
+      213: -1033452680346349534
+    second: rushSprite_126
+  - first:
+      213: -8507363384131018557
+    second: rushSprite_127
+  - first:
+      213: 8449005282555635986
+    second: rushSprite_128
+  - first:
+      213: 5025616225351576005
+    second: rushSprite_129
+  - first:
+      213: -3366519132331824717
+    second: rushSprite_130
+  - first:
+      213: -6993386554160817255
+    second: rushSprite_131
+  - first:
+      213: 7779273174008020700
+    second: rushSprite_132
+  - first:
+      213: -3146625816702454625
+    second: rushSprite_133
+  - first:
+      213: 3897812061739330585
+    second: rushSprite_134
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rushSprite_0
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 546
+        width: 10
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97691c374910e3470800000000000000
+      internalID: 8376134094064555641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_1
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 545
+        width: 18
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31aeaf3630666cb00800000000000000
+      internalID: 848477744554240531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_2
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 546
+        width: 27
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f42e8aed8d96c390800000000000000
+      internalID: -7798372471894301456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_3
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 547
+        width: 32
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6b25292701fc0880800000000000000
+      internalID: -8643268571773457556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_4
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 547
+        width: 34
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a394762b53c84b890800000000000000
+      internalID: -7443170121882318534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_5
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 492
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b1406ecfa45f7ec0800000000000000
+      internalID: -3567039265795718729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_6
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 492
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bea4a9403f3fa520800000000000000
+      internalID: 2715458576954207926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_7
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 492
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10db1ed8a196bc340800000000000000
+      internalID: 4885113783583882497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_8
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 492
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e0950d15de90b520800000000000000
+      internalID: 2715845213456535781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_9
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 492
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f014d1ddc10e9770800000000000000
+      internalID: 8619328720333967602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_10
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 492
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb38d80962cee5f00800000000000000
+      internalID: 1107582208757826495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_11
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 492
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bba37f70b7b321d0800000000000000
+      internalID: -3376653326917325896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_12
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 492
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dff10e536dad4a3b0800000000000000
+      internalID: -5502032231178166275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_13
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 450
+        width: 35
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d89d311b6abfca10800000000000000
+      internalID: 1931967734178748629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_14
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 450
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a66e93289059340800000000000000
+      internalID: 4869809026992859700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_15
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 450
+        width: 37
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5f3eff8d66d5b120800000000000000
+      internalID: 2429083340091834206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_16
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 459
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78247b21885464e90800000000000000
+      internalID: -7041864516615323001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_17
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 453
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8a0f2c75125069d0800000000000000
+      internalID: -2783134317483718002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_18
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 450
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d161fac0db95d48a0800000000000000
+      internalID: -6319296033634445795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_19
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 450
+        width: 36
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01af18fce949a7dc0800000000000000
+      internalID: -3640433938968479216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_20
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 445
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55a9ab3735f62e5b0800000000000000
+      internalID: -5340583803893409195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_21
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 445
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb882fd6777d7fc0800000000000000
+      internalID: -3495506383335814199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_22
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 445
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b248784bcf889cb0800000000000000
+      internalID: -4856974094862105934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_23
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 409
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a98dbc03c8eff90c0800000000000000
+      internalID: -4566651619062851430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_24
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 409
+        width: 38
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb492ceac0a2dcfe0800000000000000
+      internalID: -1167230494459128645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_25
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 410
+        width: 46
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce212bd723fe0b710800000000000000
+      internalID: 1707127258909643500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_26
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 412
+        width: 42
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03bfbcfe12c8a9a00800000000000000
+      internalID: 764077164177652528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_27
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 412
+        width: 55
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2015a0a61052bf850800000000000000
+      internalID: 6411759182496289026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_28
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 411
+        width: 51
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb3363cb1d8bea30800000000000000
+      internalID: 4245642224108518331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_29
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 414
+        width: 52
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f17b463cf7401480800000000000000
+      internalID: -8930558912507448840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_30
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 364
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3e6ffe4d563681c0800000000000000
+      internalID: -4501851003125010881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_31
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 364
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c754b15b8a267aa0800000000000000
+      internalID: -6163692262150350903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_32
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 364
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 338f2f49f0ca40a90800000000000000
+      internalID: -7348559509038368717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_33
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 364
+        width: 38
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 003fe9e87897f8d10800000000000000
+      internalID: 2130054771889861376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_34
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 364
+        width: 45
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eaef982c0635fcd0800000000000000
+      internalID: -2525052590222218524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_35
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 364
+        width: 45
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2762e1883219ef340800000000000000
+      internalID: 4899513026419238514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_36
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 364
+        width: 47
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82fce6f0a4ca74c20800000000000000
+      internalID: 3190708295101763368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_37
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 364
+        width: 50
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c4ba84ac50b45e70800000000000000
+      internalID: 9103094658766648512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_38
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 315
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dcebf213050d2990800000000000000
+      internalID: -7409260301193057068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_39
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 315
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6ffb7c16384e7950800000000000000
+      internalID: 6448671113684451181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_40
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 315
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c67f1d51dd5a5a0800000000000000
+      internalID: -6510554600507478909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_41
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 315
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74f66343b7da07960800000000000000
+      internalID: 7597763316042592071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_42
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 315
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 956a7f6d481f55f00800000000000000
+      internalID: 1105054836433856089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_43
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 262
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f06e492380a6750800000000000000
+      internalID: 6298856042170552127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_44
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 262
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 285766fccfcea6d50800000000000000
+      internalID: 6731453163614139778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_45
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 262
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96909a63e4752a6f0800000000000000
+      internalID: -674881000716039831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_46
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 262
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05d996e13fc21eba0800000000000000
+      internalID: -6061514200765063856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_47
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 261
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c48329d0731c060800000000000000
+      internalID: 6971914229573504004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_48
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 256
+        width: 46
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b02c99ec866bcef0800000000000000
+      internalID: -86863012402814795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_49
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 209
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 608ae777498aa9550800000000000000
+      internalID: 6168427995250731014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_50
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 210
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24a9771102977440800000000000000
+      internalID: 4933572450194138155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_51
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 211
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 596a9ed7abbc75ed0800000000000000
+      internalID: -2425245872478902635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_52
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 215
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7caab17545612c380800000000000000
+      internalID: -8952568557764629817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_53
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 216
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c54bb3843206cc70800000000000000
+      internalID: 8990876130663417281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_54
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 218
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2091ad492b0adf100800000000000000
+      internalID: 143447452007667970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_55
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 219
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02960544f7d057100800000000000000
+      internalID: 105005006571202848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_56
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 220
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5c4f9a900768ea60800000000000000
+      internalID: 7703520414909025374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_57
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 186
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de221da94bae5e030800000000000000
+      internalID: 3523480344899691245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_58
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 187
+        width: 34
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04a8548016c7d4440800000000000000
+      internalID: 4921726723978267200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_59
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 189
+        width: 66
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26fd6ddddfcd14f80800000000000000
+      internalID: -8123969269892980894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_60
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 190
+        width: 98
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f6f56fe114f2ad50800000000000000
+      internalID: 6747223549622482677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_61
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 111
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b4d66902e7029500800000000000000
+      internalID: 401391984191132850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_62
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 112
+        width: 54
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f3c1f953dab9590800000000000000
+      internalID: -7666343494853836964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_63
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 115
+        width: 60
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3488bf53ec3ec0a0800000000000000
+      internalID: -6859478235177515974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_64
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 65
+        width: 35
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f9841bb723995420800000000000000
+      internalID: 2619286457144347126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_65
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 65
+        width: 39
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fc8dd5dc7e48a360800000000000000
+      internalID: 7181075903913233652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_66
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 65
+        width: 39
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 101d4febc9b93ff50800000000000000
+      internalID: 6914040950464762113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_67
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 65
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25bfb9db3a8969390800000000000000
+      internalID: -7811888674599339182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_68
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 65
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac949367ac4667ff0800000000000000
+      internalID: -38732726056433206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_69
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 65
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 839274937320ceb60800000000000000
+      internalID: 7776593092769425720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_70
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 18
+        width: 113
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27044bc5b3a2f8f50800000000000000
+      internalID: 6885768789719531634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_71
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 46
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7647f480fa489fe60800000000000000
+      internalID: 7996568500666594407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_72
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 46
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b60af1fd68ad08540800000000000000
+      internalID: 5008243058439856235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_73
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 46
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65306fe53a5471a30800000000000000
+      internalID: 4185890946639332182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_74
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 46
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8125db4ff0f1a93f0800000000000000
+      internalID: -893367422688603624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_75
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 46
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef46cbe9f56acf2b0800000000000000
+      internalID: -5549377711212043010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_76
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 46
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d958591e0a25004d0800000000000000
+      internalID: -3170443286735911523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_77
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 43
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89bfdadfe17b36350800000000000000
+      internalID: 6008847671575313304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_78
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 46
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dd6c25b8f6e67770800000000000000
+      internalID: 8608321693631147473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_79
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 46
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08fa0478561fa02f0800000000000000
+      internalID: -1005726148400730240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_80
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 46
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09d59c81425c3e060800000000000000
+      internalID: 6981640606179745168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_81
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 46
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d05f9c20f78d32680800000000000000
+      internalID: -8780936808423099123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_82
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 46
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d371f86d7297fddb0800000000000000
+      internalID: -4764956668724308163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_83
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 46
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43847414240066800800000000000000
+      internalID: 605171484490942516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_84
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 46
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5097c4b6fdd6a7720800000000000000
+      internalID: 2844706920983197957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_85
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 46
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d027bf97635713280800000000000000
+      internalID: -9065335698084892147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_86
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 46
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f36c8b279b5680410800000000000000
+      internalID: 1443515527740311103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_87
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 46
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddb9dc6ac31938b30800000000000000
+      internalID: 4288430959869402077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_88
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 46
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7361e8e1ee54e3270800000000000000
+      internalID: 8232094057897006647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_89
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 46
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 857055ea75fab19f0800000000000000
+      internalID: -496610542772484264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_90
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 30
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e35d84f634c1b1f0800000000000000
+      internalID: -1030827099380952091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_91
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 27
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73f745d50d9a952c0800000000000000
+      internalID: -4442332845040173257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_92
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 27
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a84a76178305f9090800000000000000
+      internalID: -8025607807599926134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_93
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 30
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e21460e089bef6b0800000000000000
+      internalID: -5260563351550553368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_94
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 30
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e602bbc7bf03dfb30800000000000000
+      internalID: 4322665074033107054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_95
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 30
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d68dd3123b8aa5c90800000000000000
+      internalID: -7180241168578520979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_96
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 27
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe8f7aa5fe66ea780800000000000000
+      internalID: -8669879054437451537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_97
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 30
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504a24921ffa67b60800000000000000
+      internalID: 7743570059624358917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_98
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 30
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48b92f64976f7dc90800000000000000
+      internalID: -7144971283058222204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_99
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 30
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7867ad3e5145bda40800000000000000
+      internalID: 5393997431700092551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_100
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 30
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd9b5416796b21e70800000000000000
+      internalID: 9084524159647988189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_101
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 30
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b752c27e2b5f65940800000000000000
+      internalID: 5284681361497269627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_102
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 30
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46d558d5e0a3cba70800000000000000
+      internalID: 8844007601621785956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_103
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 30
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddbde0e41ce505d60800000000000000
+      internalID: 7876899932602293213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_104
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 30
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 594ac15b3cd8dbbe0800000000000000
+      internalID: -1459854832501480299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_105
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 27
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85543724938416fc0800000000000000
+      internalID: -3503439624352348840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_106
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 28
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25eb1e11d69adbac0800000000000000
+      internalID: -3837725021533258158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_107
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 28
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99d6f60e642616220800000000000000
+      internalID: 2477369326583115161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_108
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 30
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2649f5d7bdb3c530800000000000000
+      internalID: 3874148701735306799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_109
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 30
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b51d46fc7132d100800000000000000
+      internalID: 131221751925118391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_110
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 27
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3743bc10a72465e0800000000000000
+      internalID: -1917363972723226820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_111
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 30
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a3e06d561eb59360800000000000000
+      internalID: 7175850584549942178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_112
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 27
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c0fe785f31501970800000000000000
+      internalID: 8723561810726154440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_113
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 30
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e6340431b9e37420800000000000000
+      internalID: 2626699954978305767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_114
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 30
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a93cd90388ade2040800000000000000
+      internalID: 4624874145822131098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_115
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 30
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95597af4bcf06f450800000000000000
+      internalID: 6122098109345928537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_116
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 30
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c5fa38951db81250800000000000000
+      internalID: 5915686010997110217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_117
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 14
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90c61d48f2542fa40800000000000000
+      internalID: 5400454973564742665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_118
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 14
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7f239ab786038600800000000000000
+      internalID: 469225966197223294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_119
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 14
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb94e0b00dcf7ead0800000000000000
+      internalID: -2672889883352217153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_120
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63aba99c9b1a4b2d0800000000000000
+      internalID: -3263806010613384650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_121
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 14
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 046f7263035c559e0800000000000000
+      internalID: -1633182478994246080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_122
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 11
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52c5297c439e1d760800000000000000
+      internalID: 7481016868934933541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_123
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 14
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd5d828f23313aaf0800000000000000
+      internalID: -386444033391012388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_124
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 14
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66703a4a099a260d0800000000000000
+      internalID: -3430993527400364186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_125
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 14
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcc782cb4b52b1770800000000000000
+      internalID: 8582494973065723085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_126
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 14
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 220d7cf334078a1f0800000000000000
+      internalID: -1033452680346349534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_127
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 14
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c0a4b97316cfe980800000000000000
+      internalID: -8507363384131018557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_128
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 14
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 219a02c2a85e04570800000000000000
+      internalID: 8449005282555635986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_129
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 14
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c9258184539eb540800000000000000
+      internalID: 5025616225351576005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_130
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 14
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b92ecb8fa8b741d0800000000000000
+      internalID: -3366519132331824717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_131
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 14
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99b50464bff72fe90800000000000000
+      internalID: -6993386554160817255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_132
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde39734cb785fb60800000000000000
+      internalID: 7779273174008020700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_133
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 14
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f947062cd70f454d0800000000000000
+      internalID: -3146625816702454625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rushSprite_134
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 14
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91ca43d2b6fc71630800000000000000
+      internalID: 3897812061739330585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a9896d121f74d524cb10a4d1f622a6b8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      rushSprite_0: 8376134094064555641
+      rushSprite_1: 848477744554240531
+      rushSprite_10: 1107582208757826495
+      rushSprite_100: 9084524159647988189
+      rushSprite_101: 5284681361497269627
+      rushSprite_102: 8844007601621785956
+      rushSprite_103: 7876899932602293213
+      rushSprite_104: -1459854832501480299
+      rushSprite_105: -3503439624352348840
+      rushSprite_106: -3837725021533258158
+      rushSprite_107: 2477369326583115161
+      rushSprite_108: 3874148701735306799
+      rushSprite_109: 131221751925118391
+      rushSprite_11: -3376653326917325896
+      rushSprite_110: -1917363972723226820
+      rushSprite_111: 7175850584549942178
+      rushSprite_112: 8723561810726154440
+      rushSprite_113: 2626699954978305767
+      rushSprite_114: 4624874145822131098
+      rushSprite_115: 6122098109345928537
+      rushSprite_116: 5915686010997110217
+      rushSprite_117: 5400454973564742665
+      rushSprite_118: 469225966197223294
+      rushSprite_119: -2672889883352217153
+      rushSprite_12: -5502032231178166275
+      rushSprite_120: -3263806010613384650
+      rushSprite_121: -1633182478994246080
+      rushSprite_122: 7481016868934933541
+      rushSprite_123: -386444033391012388
+      rushSprite_124: -3430993527400364186
+      rushSprite_125: 8582494973065723085
+      rushSprite_126: -1033452680346349534
+      rushSprite_127: -8507363384131018557
+      rushSprite_128: 8449005282555635986
+      rushSprite_129: 5025616225351576005
+      rushSprite_13: 1931967734178748629
+      rushSprite_130: -3366519132331824717
+      rushSprite_131: -6993386554160817255
+      rushSprite_132: 7779273174008020700
+      rushSprite_133: -3146625816702454625
+      rushSprite_134: 3897812061739330585
+      rushSprite_14: 4869809026992859700
+      rushSprite_15: 2429083340091834206
+      rushSprite_16: -7041864516615323001
+      rushSprite_17: -2783134317483718002
+      rushSprite_18: -6319296033634445795
+      rushSprite_19: -3640433938968479216
+      rushSprite_2: -7798372471894301456
+      rushSprite_20: -5340583803893409195
+      rushSprite_21: -3495506383335814199
+      rushSprite_22: -4856974094862105934
+      rushSprite_23: -4566651619062851430
+      rushSprite_24: -1167230494459128645
+      rushSprite_25: 1707127258909643500
+      rushSprite_26: 764077164177652528
+      rushSprite_27: 6411759182496289026
+      rushSprite_28: 4245642224108518331
+      rushSprite_29: -8930558912507448840
+      rushSprite_3: -8643268571773457556
+      rushSprite_30: -4501851003125010881
+      rushSprite_31: -6163692262150350903
+      rushSprite_32: -7348559509038368717
+      rushSprite_33: 2130054771889861376
+      rushSprite_34: -2525052590222218524
+      rushSprite_35: 4899513026419238514
+      rushSprite_36: 3190708295101763368
+      rushSprite_37: 9103094658766648512
+      rushSprite_38: -7409260301193057068
+      rushSprite_39: 6448671113684451181
+      rushSprite_4: -7443170121882318534
+      rushSprite_40: -6510554600507478909
+      rushSprite_41: 7597763316042592071
+      rushSprite_42: 1105054836433856089
+      rushSprite_43: 6298856042170552127
+      rushSprite_44: 6731453163614139778
+      rushSprite_45: -674881000716039831
+      rushSprite_46: -6061514200765063856
+      rushSprite_47: 6971914229573504004
+      rushSprite_48: -86863012402814795
+      rushSprite_49: 6168427995250731014
+      rushSprite_5: -3567039265795718729
+      rushSprite_50: 4933572450194138155
+      rushSprite_51: -2425245872478902635
+      rushSprite_52: -8952568557764629817
+      rushSprite_53: 8990876130663417281
+      rushSprite_54: 143447452007667970
+      rushSprite_55: 105005006571202848
+      rushSprite_56: 7703520414909025374
+      rushSprite_57: 3523480344899691245
+      rushSprite_58: 4921726723978267200
+      rushSprite_59: -8123969269892980894
+      rushSprite_6: 2715458576954207926
+      rushSprite_60: 6747223549622482677
+      rushSprite_61: 401391984191132850
+      rushSprite_62: -7666343494853836964
+      rushSprite_63: -6859478235177515974
+      rushSprite_64: 2619286457144347126
+      rushSprite_65: 7181075903913233652
+      rushSprite_66: 6914040950464762113
+      rushSprite_67: -7811888674599339182
+      rushSprite_68: -38732726056433206
+      rushSprite_69: 7776593092769425720
+      rushSprite_7: 4885113783583882497
+      rushSprite_70: 6885768789719531634
+      rushSprite_71: 7996568500666594407
+      rushSprite_72: 5008243058439856235
+      rushSprite_73: 4185890946639332182
+      rushSprite_74: -893367422688603624
+      rushSprite_75: -5549377711212043010
+      rushSprite_76: -3170443286735911523
+      rushSprite_77: 6008847671575313304
+      rushSprite_78: 8608321693631147473
+      rushSprite_79: -1005726148400730240
+      rushSprite_8: 2715845213456535781
+      rushSprite_80: 6981640606179745168
+      rushSprite_81: -8780936808423099123
+      rushSprite_82: -4764956668724308163
+      rushSprite_83: 605171484490942516
+      rushSprite_84: 2844706920983197957
+      rushSprite_85: -9065335698084892147
+      rushSprite_86: 1443515527740311103
+      rushSprite_87: 4288430959869402077
+      rushSprite_88: 8232094057897006647
+      rushSprite_89: -496610542772484264
+      rushSprite_9: 8619328720333967602
+      rushSprite_90: -1030827099380952091
+      rushSprite_91: -4442332845040173257
+      rushSprite_92: -8025607807599926134
+      rushSprite_93: -5260563351550553368
+      rushSprite_94: 4322665074033107054
+      rushSprite_95: -7180241168578520979
+      rushSprite_96: -8669879054437451537
+      rushSprite_97: 7743570059624358917
+      rushSprite_98: -7144971283058222204
+      rushSprite_99: 5393997431700092551
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
