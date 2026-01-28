@@ -100,18 +100,24 @@ public class PlayerController : NetworkBehaviour, IDamageable
 
     protected void Update()
     {
-        if (IsOwner == false)
+        if (!IsServer && IsNetworked() && !IsOwner)
         {
             return;
         }
 
         _stateMachine.OnMove(_moveInput);
         _stateMachine.Update();
+
+
+        if (IsOwner)
+        {
+            SendInputServerRpc(_moveInput, _playerInput.actions["Jump"].WasPressedThisFrame(), false);
+        }
     }
 
     protected void FixedUpdate()
     {
-        if (IsOwner == false)
+        if (!IsServer && IsNetworked() && !IsOwner)
         {
             return;
         }
@@ -147,7 +153,9 @@ public class PlayerController : NetworkBehaviour, IDamageable
         };
     }
 
-    //Network
+    //Network Fucntions
+    private bool IsNetworked() => NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening;
+
     public override void OnNetworkSpawn()
     {
         if (IsOwner)
@@ -173,6 +181,27 @@ public class PlayerController : NetworkBehaviour, IDamageable
         };
     }
 
+    [ServerRpc]
+    private void SendInputServerRpc(float moveInput, bool jumpInput, bool rushInput)
+    {
+        ApplyInputs(moveInput, jumpInput, rushInput);
+    }
+
+    private void ApplyInputs(float moveInput, bool jumpInput, bool rushInput)
+    {
+        _moveInput = moveInput;
+        _stateMachine.OnMove(moveInput);
+
+        if (jumpInput)
+        {
+            _stateMachine.OnJump();
+        }
+
+        //Do Rush Input Later
+    }
+
+
+
     public void ApplyStun(float duration)
     {
         if (IsServer == false || _isStunned.Value == true)
@@ -187,7 +216,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
     //Input System
     private void OnMove(InputValue value)
     {
-        if (!IsOwner)
+        if (!IsOwner && IsNetworked())
         {
             return;
         }
@@ -197,6 +226,11 @@ public class PlayerController : NetworkBehaviour, IDamageable
 
     private void OnJump(InputValue value)
     {
+        if (!IsOwner && IsNetworked())
+        {
+            return;
+        }
+
         _stateMachine.OnJump();
     }
 
@@ -212,7 +246,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
 
     private void UpdateFireLayer(FireState state)
     {
-        if (IsOwner)
+        if (IsOwner == true && IsNetworked() == true)
         {
             _curFireState.Value = state;
         }
@@ -248,7 +282,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
 
     public void PlayAnimation(int animHash, float crossFadeTime = 0.1f)
     {
-        if(IsOwner == true)
+        if (IsOwner && IsNetworked())
         {
             _curAnimHash.Value = animHash;
         }
@@ -259,8 +293,12 @@ public class PlayerController : NetworkBehaviour, IDamageable
     {
         if (direction != 0)
         {
-            _isFacingRight.Value = direction > 0;
-            _spriteRenderer.flipX = _isFacingRight.Value;
+            bool isRight = direction > 0;
+            if(IsOwner && IsNetworked())
+            {
+                _isFacingRight.Value = direction > 0;
+            }
+            _spriteRenderer.flipX = isRight;
             _direction = Mathf.Sign(direction);
         }
     }

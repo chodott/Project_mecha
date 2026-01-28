@@ -99,6 +99,10 @@ public class PlayerRunState : PlayerBaseState
         }
 
         base.OnMove(direction);
+    }
+
+    public override void FixedUpdate()
+    {
         _controller.Move();
     }
 
@@ -115,12 +119,13 @@ public class PlayerRunState : PlayerBaseState
 
 public class PlayerJumpState : PlayerBaseState
 {
+    private bool _needJump = true;
     public override void Enter(PlayerController owner)
     {
         base.Enter(owner);
         PlayAnim(PlayerAnim.Jump);
+        _needJump = true;
 
-        _controller.Jump();
     }
 
     public override void Update()
@@ -128,6 +133,15 @@ public class PlayerJumpState : PlayerBaseState
         if (_controller.Velocity.y < -0.1f)
         {
             _controller.ChangeState<PlayerFallState>();
+        }
+    }
+
+    public override void FixedUpdate()
+    {
+        if(_needJump == true)
+        {
+            _controller.Jump();
+            _needJump = false;
         }
     }
 
