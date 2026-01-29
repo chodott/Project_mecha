@@ -36,6 +36,7 @@ public class RushController : NetworkBehaviour
         _rushStateMachine.OnTriggerStay(collision);
     }
 
+
     public void ChangeState<T>() where T : RushBaseState
     {
         _rushStateMachine.ChangeState<T>();

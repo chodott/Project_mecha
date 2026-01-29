@@ -113,7 +113,11 @@ public class PlayerController : NetworkBehaviour, IDamageable
 
         if (IsOwner)
         {
-            SendInputServerRpc(_moveInput, _playerInput.actions["Jump"].WasPressedThisFrame(), false);
+            SendInputServerRpc(
+                _moveInput,
+                _playerInput.actions["Jump"].WasPressedThisFrame(),
+                _playerInput.actions["CallRush"].WasPressedThisFrame()
+                );
         }
     }
 
@@ -199,7 +203,10 @@ public class PlayerController : NetworkBehaviour, IDamageable
             _stateMachine.OnJump();
         }
 
-        //Do Rush Input Later
+        if(rushInput)
+        {
+            _stateMachine.OnCallRush();
+        }
     }
 
 
