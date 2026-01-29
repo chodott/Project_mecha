@@ -75,7 +75,11 @@ public class RushIdleState : RushBaseState
 
     public override void OnTriggerStay(Collider2D collision)
     {
-        _controller.CheckPlayerJump(collision);
+        bool result = _controller.CheckPlayerJump(collision);
+        //if(result == true)
+        //{
+        //    _controller.ChangeState<RushUsedState>();
+        //}
     }
 
     public override void OnRespawn(Vector3 targetPos) 
@@ -84,4 +88,19 @@ public class RushIdleState : RushBaseState
         _controller.ChangeState<RushFallState>();
     }
 
+}
+
+public class RushUsedState : RushBaseState
+{
+    public override void Enter(RushController owner)
+    {
+        base.Enter(owner);
+        _controller.PlayAnimation(RushAnim.Used);
+    }
+
+    public override void OnRespawn(Vector3 targetPos)
+    {
+        _controller.SpawnToTarget(targetPos);
+        _controller.ChangeState<RushFallState>();
+    }
 }

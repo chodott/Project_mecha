@@ -6,6 +6,7 @@ public class RushController : NetworkBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private float _launchForce = 15f;
     [SerializeField] private float _fallSpeed = 5f;
+    [SerializeField] private float _yOffset = 0.5f;
 
     private RushStateMachine _rushStateMachine;
     private float _targetY = 0f; 
@@ -17,6 +18,7 @@ public class RushController : NetworkBehaviour
         _rushStateMachine.AddState(new RushFallState());
         _rushStateMachine.AddState(new RushLandingState());
         _rushStateMachine.AddState(new RushIdleState());
+        _rushStateMachine.AddState(new RushUsedState());
     }
 
     protected void Start()
@@ -49,17 +51,17 @@ public class RushController : NetworkBehaviour
         return _animator.GetCurrentAnimatorStateInfo(0);
     }
 
-    public void CheckPlayerJump(Collider2D collision)
+    public bool CheckPlayerJump(Collider2D collision)
     {
-        if (!IsServer && IsNetowrked) return;
 
         var player = collision.GetComponent<PlayerController>();
         if (player != null)
         {
             player.OnSuperJump(_launchForce);
-
+            return true; 
             //PlayRushAnimServerRpc();
         }
+        return false;
     }
 
     public void RequestSpawn(Vector3 targetPos)
@@ -70,7 +72,7 @@ public class RushController : NetworkBehaviour
     public void SpawnToTarget(Vector3 targetPos)
     {
         transform.position = new Vector3(targetPos.x, 5f, 0);
-        _targetY = targetPos.y;
+        _targetY = targetPos.y + _yOffset;
         gameObject.SetActive(true);
     }
 
@@ -83,7 +85,6 @@ public class RushController : NetworkBehaviour
     {
         if (transform.position.y <= _targetY)
         {
-            // 위치 보정 (바닥에 딱 붙이기)
             Vector3 finalPos = transform.position;
             finalPos.y = _targetY;
             transform.position = finalPos;

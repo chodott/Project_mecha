@@ -14,4 +14,5 @@ public static class RushAnim
     public static readonly int Spawn = Animator.StringToHash("Spawn");
     public static readonly int Landing = Animator.StringToHash("Landing");
     public static readonly int Idle = Animator.StringToHash("Idle");
+    public static readonly int Used = Animator.StringToHash("Used");
 }
