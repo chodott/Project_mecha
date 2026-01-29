@@ -3,18 +3,24 @@ using UnityEngine;
 
 public class RushController : NetworkBehaviour
 {
+    [SerializeField] private Animator _animator;
     [SerializeField] private float _launchForce = 15f;
     [SerializeField] private float _fallSpeed = 5f;
 
     private RushStateMachine _rushStateMachine;
-    private Animator _animator;
     private float _targetY = 0f; 
     public bool IsNetowrked => NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening;
 
+    protected void Awake()
+    {
+        _rushStateMachine = new RushStateMachine(this);
+        _rushStateMachine.AddState(new RushFallState());
+        _rushStateMachine.AddState(new RushLandingState());
+        _rushStateMachine.AddState(new RushIdleState());
+    }
+
     protected void Start()
     {
-        _animator = GetComponent<Animator>();
-        _rushStateMachine = new RushStateMachine(this);
         _rushStateMachine.ChangeState<RushFallState>();
     }
 
@@ -38,6 +44,11 @@ public class RushController : NetworkBehaviour
         _animator.CrossFade(animHash, crossFadeTime);
     }
 
+    public AnimatorStateInfo GetAnimStateInfo()
+    {
+        return _animator.GetCurrentAnimatorStateInfo(0);
+    }
+
     public void CheckPlayerJump(Collider2D collision)
     {
         if (!IsServer && IsNetowrked) return;
@@ -49,6 +60,18 @@ public class RushController : NetworkBehaviour
 
             //PlayRushAnimServerRpc();
         }
+    }
+
+    public void RequestSpawn(Vector3 targetPos)
+    {
+        _rushStateMachine.OnRespawn(targetPos);
+    }
+    
+    public void SpawnToTarget(Vector3 targetPos)
+    {
+        transform.position = new Vector3(targetPos.x, 5f, 0);
+        _targetY = targetPos.y;
+        gameObject.SetActive(true);
     }
 
     public void FallDown()

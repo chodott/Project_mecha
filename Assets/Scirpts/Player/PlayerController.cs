@@ -21,6 +21,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
     private PlayerInput _playerInput;
     private InputAction _attackAction;
     private PlayerAttack _playerAttack;
+    private PlayerSummonHandler _playerSummonHandler;
 
     public Vector2 Velocity { get { return _rigidBody.linearVelocity; } }
 
@@ -66,6 +67,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
     {
         _playerAttack = GetComponent<PlayerAttack>();
         _playerInput = GetComponent<PlayerInput>();
+        _playerSummonHandler = GetComponent<PlayerSummonHandler>();
     }
 
     private void OnEnable()
@@ -234,6 +236,16 @@ public class PlayerController : NetworkBehaviour, IDamageable
         _stateMachine.OnJump();
     }
 
+    private void OnCallRush(InputValue value)
+    {
+        if (!IsOwner && IsNetworked())
+        {
+            return;
+        }
+
+        _stateMachine.OnCallRush();
+    }
+
     private void OnStartCharging(InputAction.CallbackContext context)
     {
         _stateMachine.OnStartCharging();
@@ -341,6 +353,11 @@ public class PlayerController : NetworkBehaviour, IDamageable
     public bool IsGrounded()
     {
         return Physics2D.OverlapBox(_groundCheckPos.position, _groundCheckSize, 0, _groundLayer);
+    }
+
+    public void TrySpawnRush()
+    {
+        _playerSummonHandler.TrySpawnRush(transform.position);
     }
 
     public AnimatorStateInfo GetAnimStateInfo()

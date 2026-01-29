@@ -24,4 +24,6 @@ public class PlayerStateMachine : StateMachine<PlayerController>
     public void OnEndedCharging() => _curPlayerState?.OnEndedCharging();
 
     public void OnSuperJump(float force) => _curPlayerState?.OnSuperJump(force);
+
+    public void OnCallRush() => _curPlayerState?.OnCallRush();
 }

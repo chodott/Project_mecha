@@ -212,7 +212,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+  _animator: {fileID: 5673634231462824988}
   _launchForce: 15
+  _fallSpeed: 5
 --- !u!1 &8420230256097120229
 GameObject:
   m_ObjectHideFlags: 0

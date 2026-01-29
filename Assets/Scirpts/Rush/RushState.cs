@@ -23,6 +23,8 @@ public abstract class RushBaseState : IState<RushController>
     public virtual void Update() { }
 
     public virtual void OnTriggerStay(Collider2D collision) { }
+
+    public virtual void OnRespawn(Vector3 targetPos) { }
 }
 
 
@@ -31,6 +33,7 @@ public class RushFallState : RushBaseState
     public override void Enter(RushController owner)
     {
         base.Enter(owner);
+        _controller.PlayAnimation(RushAnim.Spawn);
     }
 
     public override void Update()
@@ -54,9 +57,8 @@ public class RushLandingState : RushBaseState
     }
     public override void Update()
     {
-        //Check Animation End
-
-        if(true)
+        AnimatorStateInfo info =  _controller.GetAnimStateInfo();
+        if(info.IsName("Landing") && info.normalizedTime >= 0.95f)
         {
             _controller.ChangeState<RushIdleState>();
         }
@@ -68,10 +70,18 @@ public class RushIdleState : RushBaseState
     public override void Enter(RushController owner)
     {
         base.Enter(owner);
+        _controller.PlayAnimation(RushAnim.Idle);
     }
 
     public override void OnTriggerStay(Collider2D collision)
     {
-        _controller.CheckPlayerJump(_controller.GetComponent<Collider2D>());
+        _controller.CheckPlayerJump(collision);
     }
+
+    public override void OnRespawn(Vector3 targetPos) 
+    {
+        _controller.SpawnToTarget(targetPos);
+        _controller.ChangeState<RushFallState>();
+    }
+
 }

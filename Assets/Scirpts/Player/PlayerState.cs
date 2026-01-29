@@ -49,6 +49,11 @@ public abstract class PlayerBaseState : IState<PlayerController>
     }
 
     public virtual void OnSuperJump(float force) { }
+    public virtual void OnCallRush() 
+    {
+        _controller.TrySpawnRush();
+    }
+
 }
 
 

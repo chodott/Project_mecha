@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7740548413607491786}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,8 @@ GameObject:
   - component: {fileID: -6474231198361110075}
   - component: {fileID: 4915565242203470053}
   - component: {fileID: 2102664030791578346}
-  m_Layer: 3
+  - component: {fileID: 1082761971930394117}
+  m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,6 +298,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.8, y: 1.2}
   m_Direction: 0
+--- !u!114 &1082761971930394117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2583893698965901061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087e1c4c0cb716f43976bae167efe463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rushPrefab: {fileID: 1309734442766440195, guid: eaf9eac83a26f8644a62df9fd0bbdc5e, type: 3}
+  _platformLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &7761907451344658514
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +325,7 @@ GameObject:
   - component: {fileID: 8701534344245762261}
   - component: {fileID: 8137454355458452576}
   - component: {fileID: 2440884185768349730}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7591828926562202150}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: MuzzleTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
