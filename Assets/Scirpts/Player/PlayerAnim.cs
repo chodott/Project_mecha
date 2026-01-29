@@ -8,3 +8,9 @@ public static class PlayerAnim
     public static readonly int Landing = Animator.StringToHash("Landing");
     public static readonly int Stun = Animator.StringToHash("Stun");
 }
+
+public static class RushAnim
+{
+    public static readonly int Landing = Animator.StringToHash("Landing");
+    public static readonly int Idle = Animator.StringToHash("Idle");
+}
