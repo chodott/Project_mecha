@@ -1,19 +1,32 @@
 using Unity.Netcode;
+using Unity.Services.Matchmaker.Models;
 using UnityEngine;
 
 public class RushController : NetworkBehaviour
 {
     [SerializeField] private Animator _animator;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private float _launchForce = 15f;
     [SerializeField] private float _fallSpeed = 5f;
     [SerializeField] private float _yOffset = 0.5f;
 
     private RushStateMachine _rushStateMachine;
-    private float _targetY = 0f; 
-    public bool IsNetowrked => NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening;
+    private BoxCollider2D _boxCollider;
+    private float _targetY = 0f;
+
+
+
+    private NetworkVariable<bool> _isVisible = new NetworkVariable<bool>(
+        false,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server
+        );
+    public bool IsNetworked => NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening;
+
 
     protected void Awake()
     {
+        _boxCollider = GetComponent<BoxCollider2D>();
         _rushStateMachine = new RushStateMachine(this);
         _rushStateMachine.AddState(new RushFallState());
         _rushStateMachine.AddState(new RushLandingState());
@@ -34,6 +47,12 @@ public class RushController : NetworkBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         _rushStateMachine.OnTriggerStay(collision);
+    }
+
+    private void SetUpRush(bool active)
+    {
+        _spriteRenderer.enabled = active;
+        _boxCollider.enabled = active;
     }
 
 
@@ -59,7 +78,7 @@ public class RushController : NetworkBehaviour
         if (player != null)
         {
             player.OnSuperJump(_launchForce);
-            return true; 
+            return true;
             //PlayRushAnimServerRpc();
         }
         return false;
@@ -69,12 +88,20 @@ public class RushController : NetworkBehaviour
     {
         _rushStateMachine.OnRespawn(targetPos);
     }
-    
+
     public void SpawnToTarget(Vector3 targetPos)
     {
         transform.position = new Vector3(targetPos.x, 5f, 0);
         _targetY = targetPos.y + _yOffset;
-        gameObject.SetActive(true);
+
+        if (IsNetworked && IsServer)
+        {
+            _isVisible.Value = true;
+        }
+        else
+        {
+            SetUpRush(true);
+        }
     }
 
     public void FallDown()
@@ -95,5 +122,14 @@ public class RushController : NetworkBehaviour
         {
             return false;
         }
+    }
+
+
+    public override void OnNetworkSpawn()
+    {
+        _isVisible.OnValueChanged += (oldValue, newValue) =>
+        {
+            SetUpRush(newValue);
+        };
     }
 }

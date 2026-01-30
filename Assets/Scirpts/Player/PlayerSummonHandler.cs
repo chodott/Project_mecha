@@ -1,19 +1,87 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerSummonHandler : MonoBehaviour
+public class PlayerSummonHandler : NetworkBehaviour
 {
     [SerializeField] private GameObject _rushPrefab;
     [SerializeField] private LayerMask _platformLayer;
-    private RushController _rush;
+    private RushController _rush = null;
 
+    #region Network Variables
+    private NetworkVariable<NetworkObjectReference> _rushRef = new();
+    #endregion
 
-    void Start()
+    #region Network Methods
+    private bool IsNetworked() => NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening;
+
+    public override void OnNetworkSpawn()
     {
-        GameObject obj = Instantiate(_rushPrefab);
-        _rush = obj.GetComponent<RushController>();
-        obj.SetActive(false);
+
+        _rushRef.OnValueChanged += OnRushReferenceChanged;
+        if (IsServer)
+        {
+            Debug.Log("In Server");
+            if (_rush != null)
+            {
+                return;
+            }
+
+            GameObject rush = Instantiate(_rushPrefab);
+            NetworkObject netObj = rush.GetComponent<NetworkObject>();
+            netObj.Spawn();
+
+            _rushRef.Value = netObj;
+            _rush = rush.GetComponent<RushController>();
+        }
+
+        else
+        {
+            Debug.Log("In Local");
+            if (_rush != null)
+            {
+                return;
+            }
+
+            if (_rushRef.Value.TryGet(out NetworkObject netObj))
+            {
+                _rush = netObj.GetComponent<RushController>();
+            }
+        }
     }
 
+    public override void OnNetworkDespawn()
+    {
+        _rushRef.OnValueChanged -= OnRushReferenceChanged;
+    }
+
+    private void OnRushReferenceChanged(NetworkObjectReference oldRef, NetworkObjectReference newRef)
+    {
+        if (_rush != null)
+        {
+            return;
+        }
+        if (newRef.TryGet(out NetworkObject netObj))
+        {
+            _rush = netObj.GetComponent<RushController>();
+        }
+    }
+
+
+    #endregion
+
+    #region Unity Methods
+    void Start()
+    {
+        if (!IsNetworked())
+        {
+            GameObject obj = Instantiate(_rushPrefab);
+            _rush = obj.GetComponent<RushController>();
+        }
+
+    }
+    #endregion
+
+    #region Public Methods
     public void TrySpawnRush(Vector3 playerPos)
     {
         Vector3 playerPosition = transform.position;
@@ -25,4 +93,5 @@ public class PlayerSummonHandler : MonoBehaviour
             _rush.RequestSpawn(targetPos);
         }
     }
+    #endregion
 }
