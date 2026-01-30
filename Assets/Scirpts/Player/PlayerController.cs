@@ -31,15 +31,22 @@ public class PlayerController : NetworkBehaviour, IDamageable
     [SerializeField]
     private float _jumpForce = 3f;
     [SerializeField]
+    private float _superJumpForce = 10f;
+    [SerializeField]
     private float _stunDuration = 1f;
+    [SerializeField]
+    private float _gravity = 9.81f;
 
 
     //Collision
     [SerializeField] private LayerMask _groundLayer;    // 바닥 레이어
     [SerializeField] private Transform _groundCheckPos; // 발밑에 배치한 빈 오브젝트
     [SerializeField] private Vector2 _groundCheckSize = new Vector2(0.3f, 0.1f); // 박스 크기
+    [SerializeField] private Transform _ceilCheckPos;   // 머리 위에 배치한 빈 오브젝트
+    [SerializeField] private Vector2 _ceilCheckSize = new Vector2(0.3f, 0.1f);   // 박스 크기
 
     private PlayerStateMachine _stateMachine;
+    private float _verticalVelocity;
 
     //Network 
     private NetworkVariable<FireState> _curFireState = new NetworkVariable<FireState>(
@@ -204,7 +211,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
             _stateMachine.OnJump();
         }
 
-        if(rushInput)
+        if (rushInput)
         {
             _stateMachine.OnCallRush();
         }
@@ -264,6 +271,25 @@ public class PlayerController : NetworkBehaviour, IDamageable
         _stateMachine.OnEndedCharging();
     }
 
+    private void ApplyGravity()
+    {
+        if (IsGrounded() && _verticalVelocity <= 0)
+        {
+            _verticalVelocity = 0.0f;
+        }
+        else
+        {
+            _verticalVelocity -= _gravity * Time.deltaTime;
+        }
+    }
+
+    public void ApplyMovement()
+    {
+        ApplyGravity();
+        float xVelocity = _moveInput * _movingSpeed;
+        _rigidBody.linearVelocity = new Vector2(xVelocity, _verticalVelocity);
+    }
+
     private void UpdateFireLayer(FireState state)
     {
         if (IsOwner == true && IsNetworked() == true)
@@ -298,6 +324,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
     public void ChangeState<T>() where T : PlayerBaseState
     {
         _stateMachine.ChangeState<T>();
+        Debug.Log($"State Changed to {typeof(T).Name}");
     }
 
     public void PlayAnimation(int animHash, float crossFadeTime = 0.1f)
@@ -314,7 +341,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
         if (direction != 0)
         {
             bool isRight = direction > 0;
-            if(IsOwner && IsNetworked())
+            if (IsOwner && IsNetworked())
             {
                 _isFacingRight.Value = direction > 0;
             }
@@ -323,24 +350,19 @@ public class PlayerController : NetworkBehaviour, IDamageable
         }
     }
 
-    public void Move()
-    {
-        _rigidBody.linearVelocityX = _movingSpeed * _moveInput;
-    }
-
     public void Jump()
     {
-        _rigidBody.linearVelocityY = _jumpForce;
+        _verticalVelocity = _jumpForce;
     }
 
-    public void SuperJump(float force)
+    public void SuperJump()
     {
-        _rigidBody.linearVelocityY = force;
+        _verticalVelocity = _superJumpForce;
     }
 
-    public void OnSuperJump(float force)
+    public void OnSuperJump()
     {
-        _stateMachine.OnSuperJump(force);
+        _stateMachine.OnSuperJump();
     }
 
     public void Fire()
@@ -363,10 +385,22 @@ public class PlayerController : NetworkBehaviour, IDamageable
         return Physics2D.OverlapBox(_groundCheckPos.position, _groundCheckSize, 0, _groundLayer);
     }
 
+    public bool IsTouchCeiling()
+    {
+        if(Physics2D.OverlapBox(_ceilCheckPos.position, _ceilCheckSize, 0, _groundLayer))
+        {
+            _verticalVelocity = 0;
+            _rigidBody.linearVelocity = new Vector2(_rigidBody.linearVelocity.x, 0);
+            return true;
+        }
+        return false;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(_groundCheckPos.position, _groundCheckSize);
+        Gizmos.DrawWireCube(_ceilCheckPos.position, _ceilCheckSize);
     }
 
     public void TrySpawnRush()

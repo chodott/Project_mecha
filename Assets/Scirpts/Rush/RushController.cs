@@ -6,7 +6,6 @@ public class RushController : NetworkBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private float _launchForce = 15f;
     [SerializeField] private float _fallSpeed = 5f;
     [SerializeField] private float _yOffset = 0.5f;
 
@@ -77,7 +76,7 @@ public class RushController : NetworkBehaviour
         var player = collision.GetComponent<PlayerController>();
         if (player != null)
         {
-            player.OnSuperJump(_launchForce);
+            player.OnSuperJump();
             return true;
             //PlayRushAnimServerRpc();
         }

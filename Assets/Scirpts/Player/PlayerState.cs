@@ -48,8 +48,8 @@ public abstract class PlayerBaseState : IState<PlayerController>
         _controller.Fire();
     }
 
-    public virtual void OnSuperJump(float force) { }
-    public virtual void OnCallRush() 
+    public virtual void OnSuperJump() { }
+    public virtual void OnCallRush()
     {
         _controller.TrySpawnRush();
     }
@@ -110,7 +110,7 @@ public class PlayerRunState : PlayerBaseState
 
     public override void FixedUpdate()
     {
-        _controller.Move();
+        _controller.ApplyMovement();
     }
 
     public override void OnJump()
@@ -137,6 +137,8 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void Update()
     {
+        _controller.IsTouchCeiling();
+
         if (_controller.Velocity.y < -0.1f)
         {
             _controller.ChangeState<PlayerFallState>();
@@ -145,11 +147,12 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void FixedUpdate()
     {
-        if(_needJump == true)
+        if (_needJump == true)
         {
             _controller.Jump();
             _needJump = false;
         }
+        _controller.ApplyMovement();
     }
 
     public override void OnHit()
@@ -160,12 +163,23 @@ public class PlayerJumpState : PlayerBaseState
 
 public class PlayerFallState : PlayerBaseState
 {
+    private bool _isSuperJumping = false;
     public override void Update()
     {
+        if(_isSuperJumping && _controller.IsTouchCeiling())
+        {
+            _isSuperJumping = false;
+        }
+
         if (_controller.IsGrounded() == true)
         {
             _controller.ChangeState<PlayerLandingState>();
         }
+    }
+
+    public override void FixedUpdate()
+    {
+        _controller.ApplyMovement();
     }
 
     public override void OnHit()
@@ -173,9 +187,10 @@ public class PlayerFallState : PlayerBaseState
         _controller.ChangeState<PlayerStunState>();
     }
 
-    public override void OnSuperJump(float force)
+    public override void OnSuperJump()
     {
-        _controller.SuperJump(force);
+        _controller.SuperJump();
+        _isSuperJumping = true;
     }
 }
 
@@ -191,15 +206,13 @@ public class PlayerLandingState : PlayerBaseState
         var stateInfo = _controller.GetAnimStateInfo();
         if (stateInfo.shortNameHash == PlayerAnim.Landing && stateInfo.normalizedTime >= 0.9f)
         {
-            if (Mathf.Abs(_controller.Velocity.x) < 0.1f)
-            {
-                _controller.ChangeState<PlayerIdleState>();
-            }
-            else
-            {
-                _controller.ChangeState<PlayerRunState>();
-            }
+            _controller.ChangeState<PlayerRunState>();
         }
+    }
+
+    public override void FixedUpdate()
+    {
+        _controller.ApplyMovement();
     }
 
     public override void OnHit()

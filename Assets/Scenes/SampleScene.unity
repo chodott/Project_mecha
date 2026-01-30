@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000009919d5b14f4ea547838e09a6e58e2daa6f3efa0d9964d6a6
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -511,11 +511,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 577621627576301456, guid: c0b0100aa7bb2c541a78b71bf3a99aa6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.31955
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 577621627576301456, guid: c0b0100aa7bb2c541a78b71bf3a99aa6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.3
+      value: -1.15
       objectReference: {fileID: 0}
     - target: {fileID: 577621627576301456, guid: c0b0100aa7bb2c541a78b71bf3a99aa6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -547,6 +547,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 577621627576301456, guid: c0b0100aa7bb2c541a78b71bf3a99aa6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808584552211577499, guid: c0b0100aa7bb2c541a78b71bf3a99aa6, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7464752649637395039, guid: c0b0100aa7bb2c541a78b71bf3a99aa6, type: 3}
