@@ -41,5 +41,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2983532953
+    locked: 0
+  - name: Platform
+    uniqueID: 1202015823
+    locked: 0
+  - name: Summon
+    uniqueID: 2785644163
+    locked: 0
+  - name: Player
+    uniqueID: 2855112421
+    locked: 0
+  - name: UI
+    uniqueID: 234503791
+    locked: 0
   m_RenderingLayers:
   - Default

@@ -363,6 +363,12 @@ public class PlayerController : NetworkBehaviour, IDamageable
         return Physics2D.OverlapBox(_groundCheckPos.position, _groundCheckSize, 0, _groundLayer);
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(_groundCheckPos.position, _groundCheckSize);
+    }
+
     public void TrySpawnRush()
     {
         _playerSummonHandler.TrySpawnRush(transform.position);

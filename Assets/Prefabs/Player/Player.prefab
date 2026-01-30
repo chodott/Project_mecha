@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1019239153750118484}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -152,7 +152,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _groundCheckPos: {fileID: 7740548413607491786}
-  _groundCheckSize: {x: 0.3, y: 1}
+  _groundCheckSize: {x: 0.3, y: 0.5}
 --- !u!114 &5174823995495723098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +296,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.8, y: 1.2}
+  m_Size: {x: 0.8, y: 1}
   m_Direction: 0
 --- !u!114 &1082761971930394117
 MonoBehaviour:
@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087e1c4c0cb716f43976bae167efe463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   _rushPrefab: {fileID: 1309734442766440195, guid: eaf9eac83a26f8644a62df9fd0bbdc5e, type: 3}
   _platformLayer:
     serializedVersion: 2
@@ -388,8 +389,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1439854875
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 4058577401841178775, guid: 1aaabebce56365746bccaa35249a6f1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
