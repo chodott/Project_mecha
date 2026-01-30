@@ -57,6 +57,7 @@ public class PlayerAttack : NetworkBehaviour
         if (_firePoseRoutine != null)
         {
             StopCoroutine(_firePoseRoutine);
+            _firePoseRoutine = null;
         }
         _firePoseRoutine = StartCoroutine(FirePoseRoutine());
     }
@@ -65,6 +66,10 @@ public class PlayerAttack : NetworkBehaviour
     {
         _isCharging = true;
         OnFireStateChanged(FireState.Charging);
+        if (_firePoseRoutine != null)
+        {
+            StopCoroutine(_firePoseRoutine);
+        }
     }
 
     public void Fire(float direction)

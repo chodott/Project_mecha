@@ -144,6 +144,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
         {
             _spriteRenderer.flipX = newValue;
         };
+        _spriteRenderer.flipX = _isFacingRight.Value;
 
         _curAnimHash.OnValueChanged += (oldHash, newHash) =>
         {
