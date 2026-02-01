@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02435b5ce78db7e4db36e94e20eff89e, type: 3}
   m_Name: ChunkDatabase
   m_EditorClassIdentifier: 
-  chunks:
+  Chunks:
   - chunkPrefab: {fileID: 0}
     _entranceIndexes: 01000000020000000300000004000000050000000600000007000000
     _exitIndexes: 000000000400000008000000
+  - chunkPrefab: {fileID: 0}
+    _entranceIndexes: 00000000020000000300000004000000050000000600000008000000
+    _exitIndexes: 0200000006000000

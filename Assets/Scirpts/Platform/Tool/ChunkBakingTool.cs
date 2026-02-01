@@ -29,7 +29,12 @@ public class ChunkBakingTool : EditorWindow
 
     private void BakeChunks()
     {
-        database.chunks.Clear();
+        database.Chunks.Clear();
+
+        foreach (Transform child in parent)
+        {
+            child.gameObject.SetActive(false);
+        }
 
         int platformLayer = LayerMask.NameToLayer("Platform");
         int layerMask = 1 << platformLayer;
@@ -37,6 +42,7 @@ public class ChunkBakingTool : EditorWindow
 
         foreach (Transform chunkTransform in parent)
         {
+            chunkTransform.gameObject.SetActive(true);
             ChunkData newChunkData = new ChunkData();
             var platforms = chunkTransform.GetComponentsInChildren<Transform>()
                 .Where(t  => t.gameObject.layer == platformLayer)
@@ -66,9 +72,8 @@ public class ChunkBakingTool : EditorWindow
                     newChunkData._entranceIndexes.Add(index);
                 }
             }
-            database.chunks.Add(newChunkData);
-
-   
+            database.Chunks.Add(newChunkData);
+            chunkTransform.gameObject.SetActive(false);
         }
         UnityEditor.EditorUtility.SetDirty(database);
         UnityEditor.AssetDatabase.SaveAssets();
