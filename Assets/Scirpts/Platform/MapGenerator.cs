@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.AI;
 using UnityEngine.Rendering.Universal;
@@ -15,26 +16,14 @@ public class MapGenerator : MonoBehaviour
     private float _lastSpawnedY = 0f;
 
 
+    static public MapGenerator Instance { get; private set; }
     public Transform playerTransform;
-    /*
-     1. 플레이어가 일정 높이에 도달할 시
-     2. 현재 청크의 출구를 기반으로 입구가 존재하는 다음 청크 결정
-     3. 최소 y Gap을 두고 스폰
-     */
 
     private void Start()
     {
+        Instance = this;
         GenerateNextChunk();
     }
-
-    private void Update()
-    {
-        if(playerTransform.position.y >= _lastSpawnedY)
-        {
-            GenerateNextChunk();
-        }
-    }
-
 
     public void GenerateNextChunk()
     {
