@@ -2,53 +2,41 @@ using System;
 using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.Animations;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering.Universal;
 
 public class PlayerController : NetworkBehaviour, IDamageable
 {
-    private float _moveInput;
-    private float _direction = -1;
-
+    #region SerializeField
     [SerializeField]
     private Animator _animator;
     [SerializeField]
     private SpriteRenderer _spriteRenderer;
-    [SerializeField]
-    private Rigidbody2D _rigidBody;
 
+    [SerializeField]
+    private float _stunDuration = 1f;
+
+    #endregion
+
+    #region
     private PlayerInput _playerInput;
     private InputAction _attackAction;
     private PlayerAttack _playerAttack;
+    private PlayerMovement _playerMovement;
     private PlayerSummonHandler _playerSummonHandler;
-
-    public Vector2 Velocity { get { return _rigidBody.linearVelocity; } }
-
-    //Stat
-    [SerializeField]
-    private float _movingSpeed = 5f;
-    [SerializeField]
-    private float _jumpForce = 3f;
-    [SerializeField]
-    private float _superJumpForce = 10f;
-    [SerializeField]
-    private float _stunDuration = 1f;
-    [SerializeField]
-    private float _gravity = 9.81f;
-
-
-    //Collision
-    [SerializeField] private LayerMask _groundLayer;    // 바닥 레이어
-    [SerializeField] private Transform _groundCheckPos; // 발밑에 배치한 빈 오브젝트
-    [SerializeField] private Vector2 _groundCheckSize = new Vector2(0.3f, 0.1f); // 박스 크기
-    [SerializeField] private Transform _ceilCheckPos;   // 머리 위에 배치한 빈 오브젝트
-    [SerializeField] private Vector2 _ceilCheckSize = new Vector2(0.3f, 0.1f);   // 박스 크기
-
     private PlayerStateMachine _stateMachine;
-    private float _verticalVelocity;
+    private float _moveInput;
+    private float _direction = -1;
+    #endregion
 
-    //Network 
+    #region Properties
+    public Vector2 Velocity => _playerMovement.Velocity;
+    public bool IsTouchCeiling => _playerMovement.IsTouchCeiling();
+    public bool IsGrounded => _playerMovement.IsGrounded();
+
+
+    #endregion
+
+    #region NetworkVariables
     private NetworkVariable<FireState> _curFireState = new NetworkVariable<FireState>(
         FireState.Idle,
         NetworkVariableReadPermission.Everyone,
@@ -68,11 +56,13 @@ public class PlayerController : NetworkBehaviour, IDamageable
         false,
         NetworkVariableReadPermission.Everyone,
         NetworkVariableWritePermission.Server);
+    #endregion
 
-
+    #region Unity Method
     private void Awake()
     {
         _playerAttack = GetComponent<PlayerAttack>();
+        _playerMovement = GetComponent<PlayerMovement>();
         _playerInput = GetComponent<PlayerInput>();
         _playerSummonHandler = GetComponent<PlayerSummonHandler>();
     }
@@ -139,6 +129,9 @@ public class PlayerController : NetworkBehaviour, IDamageable
         }
         _stateMachine.FixedUpdate();
     }
+    #endregion
+
+
 
     private void BindLocalEvents()
     {
@@ -170,7 +163,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
         };
     }
 
-    //Network Fucntions
+    #region Network Function
     private bool IsNetworked() => NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening;
 
     public override void OnNetworkSpawn()
@@ -203,6 +196,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
     {
         ApplyInputs(moveInput, jumpInput, rushInput);
     }
+    #endregion
 
     private void ApplyInputs(float moveInput, bool jumpInput, bool rushInput)
     {
@@ -220,8 +214,6 @@ public class PlayerController : NetworkBehaviour, IDamageable
         }
     }
 
-
-
     public void ApplyStun(float duration)
     {
         if (IsServer == false || _isStunned.Value == true)
@@ -233,7 +225,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
     }
 
 
-    //Input System
+    #region Player Input Events
     private void OnMove(InputValue value)
     {
         if (!IsOwner && IsNetworked())
@@ -273,6 +265,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
     {
         _stateMachine.OnEndedCharging();
     }
+    #endregion
 
     private void HandleGameEnd(GameResultArgs args)
     {
@@ -280,24 +273,36 @@ public class PlayerController : NetworkBehaviour, IDamageable
         _stateMachine.OnGameEnded(isWinner);
     }
 
-    private void ApplyGravity()
-    {
-        if (IsGrounded() && _verticalVelocity <= 0)
-        {
-            _verticalVelocity = 0.0f;
-        }
-        else
-        {
-            _verticalVelocity -= _gravity * Time.deltaTime;
-        }
-    }
 
+    #region Movement Method
     public void ApplyMovement()
     {
-        ApplyGravity();
-        float xVelocity = _moveInput * _movingSpeed;
-        _rigidBody.linearVelocity = new Vector2(xVelocity, _verticalVelocity);
+        _playerMovement.ApplyMovement(_moveInput);
     }
+
+    public void ChangeMoveDirection(float direction)
+    {
+        if (direction != 0)
+        {
+            bool isRight = direction > 0;
+            if (IsOwner && IsNetworked())
+            {
+                _isFacingRight.Value = direction > 0;
+            }
+            _spriteRenderer.flipX = isRight;
+            _direction = Mathf.Sign(direction);
+        }
+    }
+    public void Jump()
+    {
+        _playerMovement.Jump();
+    }
+
+    public void SuperJump()
+    {
+        _playerMovement.SuperJump();
+    }
+    #endregion
 
     private void UpdateFireLayer(FireState state)
     {
@@ -345,30 +350,6 @@ public class PlayerController : NetworkBehaviour, IDamageable
         _animator.CrossFade(animHash, crossFadeTime);
     }
 
-    public void ChangeMoveDirection(float direction)
-    {
-        if (direction != 0)
-        {
-            bool isRight = direction > 0;
-            if (IsOwner && IsNetworked())
-            {
-                _isFacingRight.Value = direction > 0;
-            }
-            _spriteRenderer.flipX = isRight;
-            _direction = Mathf.Sign(direction);
-        }
-    }
-
-    public void Jump()
-    {
-        _verticalVelocity = _jumpForce;
-    }
-
-    public void SuperJump()
-    {
-        _verticalVelocity = _superJumpForce;
-    }
-
     public void OnSuperJump()
     {
         _stateMachine.OnSuperJump();
@@ -389,29 +370,6 @@ public class PlayerController : NetworkBehaviour, IDamageable
         _playerAttack.BreakCharging();
     }
 
-    public bool IsGrounded()
-    {
-        return Physics2D.OverlapBox(_groundCheckPos.position, _groundCheckSize, 0, _groundLayer);
-    }
-
-    public bool IsTouchCeiling()
-    {
-        if(Physics2D.OverlapBox(_ceilCheckPos.position, _ceilCheckSize, 0, _groundLayer))
-        {
-            _verticalVelocity = 0;
-            _rigidBody.linearVelocity = new Vector2(_rigidBody.linearVelocity.x, 0);
-            return true;
-        }
-        return false;
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(_groundCheckPos.position, _groundCheckSize);
-        Gizmos.DrawWireCube(_ceilCheckPos.position, _ceilCheckSize);
-    }
-
     public void TrySpawnRush()
     {
         _playerSummonHandler.TrySpawnRush(transform.position);
@@ -422,8 +380,10 @@ public class PlayerController : NetworkBehaviour, IDamageable
         return _animator.GetCurrentAnimatorStateInfo(0);
     }
 
+    #region IDamagable Interface
     public void TakeDamage(float damageAmount)
     {
         ApplyStun(_stunDuration);
     }
+    #endregion
 }

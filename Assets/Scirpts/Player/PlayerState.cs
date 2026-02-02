@@ -146,7 +146,12 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void Update()
     {
-        _controller.IsTouchCeiling();
+        if(_controller.IsTouchCeiling)
+        {
+            _needJump = false;
+            _controller.ChangeState<PlayerFallState>();
+            return;
+        }
 
         if (_controller.Velocity.y < -0.1f)
         {
@@ -175,12 +180,12 @@ public class PlayerFallState : PlayerBaseState
     private bool _isSuperJumping = false;
     public override void Update()
     {
-        if (_isSuperJumping && _controller.IsTouchCeiling())
+        if (_isSuperJumping && _controller.IsTouchCeiling)
         {
             _isSuperJumping = false;
         }
 
-        if (_controller.IsGrounded() == true)
+        if (_controller.IsGrounded == true)
         {
             _controller.ChangeState<PlayerLandingState>();
         }
@@ -270,4 +275,8 @@ public class PlayerWinState : PlayerBaseState
         PlayAnim(PlayerAnim.Win);
     }
 
+    public override void OnMove(float direction)
+    {
+        //Do nothing Input
+    }
 }

@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 4915565242203470053}
   - component: {fileID: 2102664030791578346}
   - component: {fileID: 1082761971930394117}
+  - component: {fileID: 5922188831881738048}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -176,19 +177,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   _animator: {fileID: 2440884185768349730}
   _spriteRenderer: {fileID: 8137454355458452576}
-  _rigidBody: {fileID: -6474231198361110075}
-  _movingSpeed: 2.5
-  _jumpForce: 5
-  _superJumpForce: 10
   _stunDuration: 1
-  _gravity: 9.81
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  _groundCheckPos: {fileID: 7740548413607491786}
-  _groundCheckSize: {x: 0.3, y: 0.5}
-  _ceilCheckPos: {fileID: 3283946340956165429}
-  _ceilCheckSize: {x: 0.6, y: 0.3}
 --- !u!114 &5174823995495723098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +340,30 @@ MonoBehaviour:
   _platformLayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &5922188831881738048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2583893698965901061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9959f7dfea63bf34c853a42af54a96a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movingSpeed: 3
+  _jumpForce: 5
+  _superJumpForce: 10
+  _gravity: 9.81
+  _rigidBody: {fileID: -6474231198361110075}
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  _groundCheckPos: {fileID: 7740548413607491786}
+  _groundCheckSize: {x: 0.3, y: 0.2}
+  _ceilCheckPos: {fileID: 3283946340956165429}
+  _ceilCheckSize: {x: 0.3, y: 0.1}
 --- !u!1 &7761907451344658514
 GameObject:
   m_ObjectHideFlags: 0
