@@ -1,23 +1,22 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Experimental.AI;
-using UnityEngine.Rendering.Universal;
 
-public class MapGenerator : MonoBehaviour
+public class MapGenerator : NetworkBehaviour
 {
     [SerializeField] private ChunkDatabase _chunkDatabase;
     [SerializeField] private float _chunkGap;
-    
 
+
+    private Queue<GameObject> _activeChunks = new Queue<GameObject>();
     private ChunkData _lastSpawnedChunk = null;
     private float _lastSpawnedY = 0f;
+    private int maxChunkCount = 5;
 
 
     static public MapGenerator Instance { get; private set; }
-    public Transform playerTransform;
 
     private void Start()
     {
@@ -27,11 +26,31 @@ public class MapGenerator : MonoBehaviour
 
     public void GenerateNextChunk()
     {
-        ChunkData nextChunk = _lastSpawnedChunk == null? GetFirstChunk() : GetNextRandomChunk();
+        if(!IsServer)
+        {
+            return;
+        }
+
+        ChunkData nextChunk = _lastSpawnedChunk == null ? GetFirstChunk() : GetNextRandomChunk();
         _lastSpawnedY += _chunkGap;
         Vector3 spawnPosition = new Vector3(0f, _lastSpawnedY, 0f);
         _lastSpawnedChunk = nextChunk;
-        Instantiate(nextChunk.chunkPrefab, spawnPosition, Quaternion.identity);
+
+        GameObject chunk = Instantiate(nextChunk.chunkPrefab, spawnPosition, Quaternion.identity);
+        _activeChunks.Enqueue(chunk);
+        NetworkObject netObj = chunk.GetComponent<NetworkObject>();
+        netObj.Spawn();
+
+        RemoveOldestChunk();
+    }
+
+    private void RemoveOldestChunk()
+    {
+        if (_activeChunks.Count > maxChunkCount)
+        {
+            GameObject oldChunk = _activeChunks.Dequeue();
+            Destroy(oldChunk);
+        }
     }
 
     public ChunkData GetFirstChunk()

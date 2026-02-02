@@ -1,8 +1,18 @@
 using UnityEngine;
 
-public class ChunkTrigger : MonoBehaviour
+public class ChunkTrigger : NetworkPoolable
 {
     private bool _hasTriggered = false;
+
+    public override void OnDespawn()
+    {
+
+    }
+
+    public override void OnSpawn()
+    {
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
