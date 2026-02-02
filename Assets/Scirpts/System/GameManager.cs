@@ -1,16 +1,27 @@
 using Unity.Netcode;
 using UnityEngine;
 
-public enum GameStatus { Ready, Playing, Player1Win, Player2Win, Draw }
+public enum GamePhase { Ready, Playing, End }
+public enum GameResult { Player1Win, Player2Win, Draw }
+public struct GameResultArgs
+{
+    public GameResult Result;
+    public ulong WinnerID;
+
+    public GameResultArgs(GameResult result, ulong winnerID)
+    {
+        Result = result;
+        WinnerID = winnerID;
+    }
+}
 
 public class GameManager : NetworkBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    private NetworkVariable<GameStatus> _currentGameStatus = new NetworkVariable<GameStatus>(GameStatus.Ready);
-
+    private NetworkVariable<GamePhase> _currentGamePhase = new NetworkVariable<GamePhase>(GamePhase.Ready);
+    private NetworkVariable<ulong> _winnerID = new NetworkVariable<ulong>();
     private float _deathLine = -8f;
-    private bool _isGameEnd = false;
 
     private void Awake()
     {
@@ -27,17 +38,17 @@ public class GameManager : NetworkBehaviour
 
     private void OnEnable()
     {
-        _currentGameStatus.OnValueChanged += OnStatusChanged;
+        _currentGamePhase.OnValueChanged += OnPhaseChanged;
     }
 
     private void OnDisable()
     {
-        _currentGameStatus.OnValueChanged -= OnStatusChanged;
+        _currentGamePhase.OnValueChanged -= OnPhaseChanged;
     }
 
     void Update()
     {
-        if(!IsServer || _isGameEnd)
+        if (!IsServer || _currentGamePhase.Value== GamePhase.End)
         {
             return;
         }
@@ -45,20 +56,20 @@ public class GameManager : NetworkBehaviour
         CheckConditions();
     }
 
-    private void OnStatusChanged(GameStatus oldStatus, GameStatus newStatus)
+    private void OnPhaseChanged(GamePhase oldStatus, GamePhase newStatus)
     {
-        EventBus.OnChangedGameStatus?.Invoke(newStatus);
+        EventBus.OnChangedGamePhase?.Invoke(newStatus);
     }
 
     private void CheckConditions()
     {
         var clients = NetworkManager.Singleton.ConnectedClientsList;
-        if(clients.Count < 2)
+        if (clients.Count < 2)
         {
             return;
         }
 
-        _currentGameStatus.Value = GameStatus.Playing;
+        _currentGamePhase.Value = GamePhase.Playing;
 
         ulong p1ID = clients[0].ClientId;
         ulong p2ID = clients[1].ClientId;
@@ -68,29 +79,31 @@ public class GameManager : NetworkBehaviour
 
         float curDeathY = Camera.main.transform.position.y + _deathLine;
 
-        if(p1Transform.position.y <curDeathY)
+        if (p1Transform.position.y < curDeathY)
         {
-            EndGame(GameStatus.Player2Win);
+            EndGame(p2ID);
         }
-        else if(p2Transform.position.y < curDeathY)
+        else if (p2Transform.position.y < curDeathY)
         {
-            EndGame(GameStatus.Player1Win); 
+            EndGame(p1ID);
         }
     }
 
-    private void EndGame(GameStatus gameStatus)
+    private void EndGame(ulong winnerID)
     {
-        _isGameEnd = true;
-        _currentGameStatus.Value = gameStatus;
+        _winnerID.Value = winnerID;
 
-        Debug.Log($"Game Ended with Status: {gameStatus}");
+        _currentGamePhase.Value = GamePhase.End;
 
-        ShowStatusClientRpc(gameStatus);
+        Debug.Log($"Winner Issssssss: {winnerID}");
+
+        NotifyGameEndClientRpc(winnerID);
     }
 
     [ClientRpc]
-    private void ShowStatusClientRpc(GameStatus gameStatus)
+    private void NotifyGameEndClientRpc(ulong winnerID)
     {
-        Debug.Log($"Game Status on Client: {gameStatus}");
+        GameResultArgs args = new GameResultArgs { WinnerID = winnerID };
+        EventBus.OnGameEnded?.Invoke(args);
     }
 }

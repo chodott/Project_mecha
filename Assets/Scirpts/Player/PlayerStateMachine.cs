@@ -26,4 +26,6 @@ public class PlayerStateMachine : StateMachine<PlayerController>
     public void OnSuperJump() => _curPlayerState?.OnSuperJump();
 
     public void OnCallRush() => _curPlayerState?.OnCallRush();
+
+    public void OnGameEnded(bool isWinner) => _curPlayerState?.OnGameEnded(isWinner);
 }

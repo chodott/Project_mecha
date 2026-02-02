@@ -24,12 +24,12 @@ public class CameraScroller : NetworkBehaviour
 
     private void OnEnable()
     {
-        EventBus.OnChangedGameStatus += HandleGameStatus;
+        EventBus.OnChangedGamePhase += HandleGamePhase;
     }
 
     private void OnDisable()
     {
-        EventBus.OnChangedGameStatus -= HandleGameStatus;
+        EventBus.OnChangedGamePhase -= HandleGamePhase;
     }
 
     public override void OnNetworkSpawn()
@@ -47,11 +47,11 @@ public class CameraScroller : NetworkBehaviour
       );
     }
 
-    private void HandleGameStatus(GameStatus gameStatus)
+    private void HandleGamePhase(GamePhase gameStatus)
     {
         switch (gameStatus)
         { 
-            case GameStatus.Playing:
+            case GamePhase.Playing:
                 _isScrolling = true;
                 break;
 

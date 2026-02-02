@@ -83,6 +83,8 @@ public class PlayerController : NetworkBehaviour, IDamageable
         {
             BindLocalEvents();
         }
+
+        EventBus.OnGameEnded += HandleGameEnd;
     }
 
     private void OnDisable()
@@ -103,6 +105,7 @@ public class PlayerController : NetworkBehaviour, IDamageable
         _stateMachine.AddState(new PlayerFallState());
         _stateMachine.AddState(new PlayerLandingState());
         _stateMachine.AddState(new PlayerStunState());
+        _stateMachine.AddState(new PlayerWinState());
 
         ChangeState<PlayerIdleState>();
     }
@@ -269,6 +272,12 @@ public class PlayerController : NetworkBehaviour, IDamageable
     private void OnEndedCharging(InputAction.CallbackContext context)
     {
         _stateMachine.OnEndedCharging();
+    }
+
+    private void HandleGameEnd(GameResultArgs args)
+    {
+        bool isWinner = NetworkManager.LocalClientId == args.WinnerID;
+        _stateMachine.OnGameEnded(isWinner);
     }
 
     private void ApplyGravity()

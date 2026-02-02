@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
@@ -52,6 +53,14 @@ public abstract class PlayerBaseState : IState<PlayerController>
     public virtual void OnCallRush()
     {
         _controller.TrySpawnRush();
+    }
+
+    public void OnGameEnded(bool isWinner)
+    {
+        if(isWinner)
+        {
+            _controller.ChangeState<PlayerWinState>();
+        }
     }
 
 }
@@ -166,7 +175,7 @@ public class PlayerFallState : PlayerBaseState
     private bool _isSuperJumping = false;
     public override void Update()
     {
-        if(_isSuperJumping && _controller.IsTouchCeiling())
+        if (_isSuperJumping && _controller.IsTouchCeiling())
         {
             _isSuperJumping = false;
         }
@@ -250,4 +259,15 @@ public class PlayerStunState : PlayerBaseState
     {
         _controller.BreakCharging();
     }
+}
+
+public class PlayerWinState : PlayerBaseState
+{
+    public override void Enter(PlayerController owner)
+    {
+
+        base.Enter(owner);
+        PlayAnim(PlayerAnim.Win);
+    }
+
 }
