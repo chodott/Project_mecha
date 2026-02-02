@@ -32,7 +32,6 @@ public class GameManager : NetworkBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
     }
 

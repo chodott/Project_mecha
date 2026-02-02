@@ -45,7 +45,7 @@ public class CreateRoomButton : NetworkBehaviour
             return;
         }
 
-        var status = NetworkManager.SceneManager.LoadScene(
+        var status = NetworkManager.Singleton.SceneManager.LoadScene(
             "MainScene",
             UnityEngine.SceneManagement.LoadSceneMode.Single);
 
