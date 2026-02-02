@@ -7,20 +7,34 @@ public class CameraScroller : NetworkBehaviour
 
     NetworkVariable<float> _currentY = new NetworkVariable<float>(0f);
 
-    public override void OnNetworkSpawn()
-    {
-        _currentY.OnValueChanged += UpdateCameraPosition;
-    }
+    private bool _isScrolling = false;
 
     private void LateUpdate()
     {
-        if(!IsServer)
+        if (!IsServer)
         {
             return;
         }
 
+        if (_isScrolling)
+        {
+            _currentY.Value += _scrollSpeed * Time.deltaTime;
+        }
+    }
 
-        _currentY.Value += _scrollSpeed * Time.deltaTime;
+    private void OnEnable()
+    {
+        EventBus.OnChangedGameStatus += HandleGameStatus;
+    }
+
+    private void OnDisable()
+    {
+        EventBus.OnChangedGameStatus -= HandleGameStatus;
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        _currentY.OnValueChanged += UpdateCameraPosition;
     }
 
     private void UpdateCameraPosition(float previousValue, float newValue)
@@ -31,5 +45,19 @@ public class CameraScroller : NetworkBehaviour
           newValue,
           transform.position.z
       );
+    }
+
+    private void HandleGameStatus(GameStatus gameStatus)
+    {
+        switch (gameStatus)
+        { 
+            case GameStatus.Playing:
+                _isScrolling = true;
+                break;
+
+            default:
+                _isScrolling = false; 
+                break;
+        }
     }
 }

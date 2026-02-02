@@ -1,15 +1,14 @@
 using Unity.Netcode;
 using UnityEngine;
 
+public enum GameStatus { Ready, Playing, Player1Win, Player2Win, Draw }
+
 public class GameManager : NetworkBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public enum GameResult { Playing, Player1Win, Player2Win, Draw }
-    public NetworkVariable<GameResult> CurrentGameResult = new NetworkVariable<GameResult>(GameResult.Playing);
+    private NetworkVariable<GameStatus> _currentGameStatus = new NetworkVariable<GameStatus>(GameStatus.Ready);
 
-
-    [SerializeField] private CameraScroller _cameraScroller;
     private float _deathLine = -8f;
     private bool _isGameEnd = false;
 
@@ -26,6 +25,16 @@ public class GameManager : NetworkBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        _currentGameStatus.OnValueChanged += OnStatusChanged;
+    }
+
+    private void OnDisable()
+    {
+        _currentGameStatus.OnValueChanged -= OnStatusChanged;
+    }
+
     void Update()
     {
         if(!IsServer || _isGameEnd)
@@ -36,6 +45,11 @@ public class GameManager : NetworkBehaviour
         CheckConditions();
     }
 
+    private void OnStatusChanged(GameStatus oldStatus, GameStatus newStatus)
+    {
+        EventBus.OnChangedGameStatus?.Invoke(newStatus);
+    }
+
     private void CheckConditions()
     {
         var clients = NetworkManager.Singleton.ConnectedClientsList;
@@ -43,6 +57,8 @@ public class GameManager : NetworkBehaviour
         {
             return;
         }
+
+        _currentGameStatus.Value = GameStatus.Playing;
 
         ulong p1ID = clients[0].ClientId;
         ulong p2ID = clients[1].ClientId;
@@ -54,29 +70,27 @@ public class GameManager : NetworkBehaviour
 
         if(p1Transform.position.y <curDeathY)
         {
-            EndGame(GameResult.Player2Win);
+            EndGame(GameStatus.Player2Win);
         }
         else if(p2Transform.position.y < curDeathY)
         {
-            EndGame(GameResult.Player1Win); 
+            EndGame(GameStatus.Player1Win); 
         }
     }
 
-    private void EndGame(GameResult gameResult)
+    private void EndGame(GameStatus gameStatus)
     {
         _isGameEnd = true;
-        _cameraScroller.enabled = false;
-        CurrentGameResult.Value = gameResult;
+        _currentGameStatus.Value = gameStatus;
 
-        Debug.Log($"Game Ended with result: {gameResult}");
-        //Stop Camera / Stop Player Movement etc.
+        Debug.Log($"Game Ended with Status: {gameStatus}");
 
-        ShowResultClientRpc(gameResult);
+        ShowStatusClientRpc(gameStatus);
     }
 
     [ClientRpc]
-    private void ShowResultClientRpc(GameResult gameResult)
+    private void ShowStatusClientRpc(GameStatus gameStatus)
     {
-        Debug.Log($"Game Result on Client: {gameResult}");
+        Debug.Log($"Game Status on Client: {gameStatus}");
     }
 }
