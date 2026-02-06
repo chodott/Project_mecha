@@ -74,7 +74,8 @@ public class PlayerController : NetworkBehaviour, IDamageable
             BindLocalEvents();
         }
 
-        EventBus.OnGameEnded += HandleGameEnd;
+        EventBus.OnWin += HandleGameWin;
+        EventBus.OnLose += HandleGameLosed;
     }
 
     private void OnDisable()
@@ -267,10 +268,14 @@ public class PlayerController : NetworkBehaviour, IDamageable
     }
     #endregion
 
-    private void HandleGameEnd(GameResultArgs args)
+    private void HandleGameWin()
     {
-        bool isWinner = NetworkManager.LocalClientId == args.WinnerID;
-        _stateMachine.OnGameEnded(isWinner);
+        _stateMachine.OnGameEnded(true);
+    }
+
+    private void HandleGameLosed()
+    {
+        _stateMachine.OnGameEnded(false);
     }
 
 

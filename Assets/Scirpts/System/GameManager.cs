@@ -2,18 +2,6 @@ using Unity.Netcode;
 using UnityEngine;
 
 public enum GamePhase { Ready, Playing, End }
-public enum GameResult { Player1Win, Player2Win, Draw }
-public struct GameResultArgs
-{
-    public GameResult Result;
-    public ulong WinnerID;
-
-    public GameResultArgs(GameResult result, ulong winnerID)
-    {
-        Result = result;
-        WinnerID = winnerID;
-    }
-}
 
 public class GameManager : NetworkBehaviour
 {
@@ -102,7 +90,16 @@ public class GameManager : NetworkBehaviour
     [ClientRpc]
     private void NotifyGameEndClientRpc(ulong winnerID)
     {
-        GameResultArgs args = new GameResultArgs { WinnerID = winnerID };
-        EventBus.OnGameEnded?.Invoke(args);
+
+        bool isWinner = NetworkManager.LocalClientId == winnerID;
+        if(isWinner)
+        {
+            EventBus.OnWin?.Invoke();
+        }
+        else
+        {
+            EventBus.OnLose?.Invoke();
+        }
+
     }
 }
